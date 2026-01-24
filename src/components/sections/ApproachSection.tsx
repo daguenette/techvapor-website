@@ -1,55 +1,68 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { APPROACH_CONTENT, PROCESS_STEPS } from "@/lib/constants/site-content";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
-import { Search, Map, Rocket, TrendingUp } from "lucide-react";
+import { Shield, Users, CheckCircle, Sparkles } from "lucide-react";
 
-const stepIcons = {
-  1: Search,
-  2: Map,
-  3: Rocket,
-  4: TrendingUp,
+const iconMap = {
+  1: Users,
+  2: Shield,
+  3: CheckCircle,
+  4: Sparkles,
 };
 
 export function ApproachSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="approach" className="py-24 lg:py-32">
-      <div className="container mx-auto max-w-6xl px-4">
-        <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
-          <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-              {t(APPROACH_CONTENT.title)}
-            </h2>
-            <p className="text-lg text-gray-600">{t(APPROACH_CONTENT.intro)}</p>
-          </div>
+    <section id="why-choose" className="py-20 lg:py-28 bg-white">
+      <div className="container mx-auto max-w-7xl px-4">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            {t(APPROACH_CONTENT.title)}
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            {t(APPROACH_CONTENT.intro)}
+          </p>
+        </div>
 
-          <div className="grid gap-6 sm:grid-cols-2">
-            {PROCESS_STEPS.map((step) => {
-              const Icon = stepIcons[step.id as keyof typeof stepIcons];
-              return (
-                <Card
-                  key={step.id}
-                  className="border-2 transition-colors hover:border-[#F0492E]/30"
-                >
-                  <CardContent className="p-6">
-                    <div className="mb-4 flex size-12 items-center justify-center rounded-lg bg-[#F0492E]/20">
-                      <Icon className="size-6 text-[#F0492E]" />
+        {/* 4 Benefits Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {PROCESS_STEPS.map((step) => {
+            const Icon = iconMap[step.id as keyof typeof iconMap];
+            return (
+              <Card 
+                key={step.id} 
+                className="border-2 border-gray-100 hover:border-red-200 transition-all duration-300 hover:shadow-xl bg-white"
+              >
+                <CardContent className="p-8 text-center">
+                  {/* Icon */}
+                  <div className="mb-6 flex justify-center">
+                    <div className="h-20 w-20 rounded-full bg-black flex items-center justify-center">
+                      <Icon className="h-10 w-10 text-white" strokeWidth={2} />
                     </div>
-                    <h3 className="mb-2 text-lg font-semibold text-gray-900">
-                      {t(step.title)}
-                    </h3>
-                    <p className="mb-3 text-sm font-medium text-[#F0492E]">
-                      {t(step.subtitle)}
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      {t(step.description)}
-                    </p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                    {t(step.title)}
+                  </h3>
+
+                  {/* Subtitle */}
+                  <p className="text-sm font-semibold text-red-600 uppercase tracking-wide mb-4">
+                    {t(step.subtitle)}
+                  </p>
+
+                  {/* Description */}
+                  <p className="text-gray-600 leading-relaxed">
+                    {t(step.description)}
+                  </p>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>

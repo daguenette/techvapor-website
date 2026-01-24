@@ -1,63 +1,81 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
-import { TEAM_MEMBERS, ABOUT_CONTENT } from "@/lib/constants/site-content";
+import { ABOUT_CONTENT } from "@/lib/constants/site-content";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
-import { User } from "lucide-react";
+import { Award, Heart, Star } from "lucide-react";
+
+const iconMap = [Award, Heart, Star];
 
 export function AboutSection() {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   return (
-    <section id="about" className="bg-gray-50 py-24 lg:py-32">
-      <div className="container mx-auto max-w-6xl px-4">
-        <div className="mb-16 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+    <section id="about" className="py-20 lg:py-28 bg-white">
+      <div className="container mx-auto max-w-7xl px-4">
+        {/* Header with Guarantee Badge */}
+        <div className="text-center mb-16">
+          <div className="inline-block mb-6">
+            <div className="bg-red-600 text-white px-8 py-3 rounded-full font-bold text-lg shadow-lg">
+              {t(ABOUT_CONTENT.subtitle)}
+            </div>
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             {t(ABOUT_CONTENT.title)}
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
-            {t(ABOUT_CONTENT.subtitle)}
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            {t(ABOUT_CONTENT.intro)}
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2">
-          {TEAM_MEMBERS.map((member) => (
-            <Card key={member.id} className="bg-white shadow-lg">
-              <CardContent className="p-8">
-                <div className="mb-6 flex items-center space-x-4">
-                  <div className="flex size-16 items-center justify-center rounded-full bg-[#F0492E]/20">
-                    <User className="size-8 text-[#F0492E]" />
+        {/* Content Sections */}
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {ABOUT_CONTENT.sections.map((section, index) => {
+            const Icon = iconMap[index];
+            return (
+              <Card 
+                key={index}
+                className="border-2 border-gray-100 hover:border-blue-200 transition-all duration-300 bg-white shadow-lg"
+              >
+                <CardContent className="p-8">
+                  {/* Icon */}
+                  <div className="mb-6">
+                    <div className="h-14 w-14 rounded-lg bg-black flex items-center justify-center">
+                      <Icon className="h-7 w-7 text-white" strokeWidth={2} />
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900">
-                      {member.name}
-                    </h3>
-                    <p className="font-medium text-[#F0492E]">
-                      {t(member.specialty)}
-                    </p>
-                  </div>
-                </div>
-                <p className="mb-6 text-gray-600">{t(member.bio)}</p>
-                <div className="space-y-2">
-                  <p className="text-sm font-medium text-gray-900">
-                    {language === "fr" ? "Forces :" : "Strengths:"}
+
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {t(section.title)}
+                  </h3>
+
+                  {/* Content */}
+                  <p className="text-gray-600 leading-relaxed">
+                    {t(section.content)}
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    {member.strengths[language].map((strength) => (
-                      <span
-                        key={strength}
-                        className="rounded-full bg-[#F0492E]/10 px-3 py-1 text-sm font-medium text-[#F0492E]"
-                      >
-                        {strength}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-lg text-gray-600">{t(ABOUT_CONTENT.conclusion)}</p>
+        {/* Bottom CTA Banner */}
+        <div className="mt-16 bg-red-600 rounded-2xl p-10 text-center text-white shadow-2xl">
+          <h3 className="text-3xl font-bold mb-4">
+            Ready to Experience the Difference?
+          </h3>
+          <p className="text-xl mb-6 text-white/90">
+            Join thousands of satisfied customers who trust us with their homes
+          </p>
+          <div className="flex items-center justify-center gap-2 text-lg font-semibold">
+            <Star className="h-6 w-6 fill-yellow-300 text-yellow-300" />
+            <Star className="h-6 w-6 fill-yellow-300 text-yellow-300" />
+            <Star className="h-6 w-6 fill-yellow-300 text-yellow-300" />
+            <Star className="h-6 w-6 fill-yellow-300 text-yellow-300" />
+            <Star className="h-6 w-6 fill-yellow-300 text-yellow-300" />
+            <span className="ml-2">4.9/5 Average Rating</span>
+          </div>
         </div>
       </div>
     </section>

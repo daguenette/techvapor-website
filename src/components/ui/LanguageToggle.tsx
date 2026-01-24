@@ -3,29 +3,24 @@
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
 import { Languages } from "lucide-react";
-import { analytics } from "@/lib/analytics";
 
 export function LanguageToggle() {
   const { language, setLanguage } = useLanguage();
 
   const toggleLanguage = () => {
     const newLanguage = language === "fr" ? "en" : "fr";
-
-    // Track language change with analytics
-    analytics.business.languageChanged(language, newLanguage);
-
     setLanguage(newLanguage);
   };
 
   return (
     <Button
-      variant="outline"
+      variant="ghost"
       size="sm"
       onClick={toggleLanguage}
-      className="flex items-center gap-2"
+      className="flex items-center gap-2 text-white hover:bg-white/20 hover:text-white border border-white/30"
     >
       <Languages className="h-4 w-4" />
-      <span className="font-medium">{language === "fr" ? "EN" : "FR"}</span>
+      <span className="font-semibold">{language === "fr" ? "EN" : "FR"}</span>
     </Button>
   );
 }

@@ -77,15 +77,16 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  /* TechVapor Brand Gradient Colors - TODO: Update with your brand colors */
-  --brand-gradient-start: #3b82f6; /* TODO: Replace with your primary color */
-  --brand-gradient-middle: #8b5cf6; /* TODO: Replace with your secondary color */
-  --brand-gradient-end: #6366f1; /* TODO: Replace with your tertiary color */
+  /* Technivapeur Brand Colors - Red/Black/White */
+  --brand-primary: #dc2626; /* Red - Energy & Power */
+  --brand-secondary: #000000; /* Black - Professional & Bold */
+  --brand-accent: #ef4444; /* Bright Red - Accent */
+  --brand-light: #ffffff; /* White - Clean Background */
+  --brand-dark: #000000; /* Black - Text */
   --brand-gradient: linear-gradient(
-    to right,
-    var(--brand-gradient-start),
-    var(--brand-gradient-middle),
-    var(--brand-gradient-end)
+    135deg,
+    var(--brand-light),
+    var(--brand-primary)
   );
 }
 

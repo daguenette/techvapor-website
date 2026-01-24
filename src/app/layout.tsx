@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { LanguageProvider } from "@/lib/contexts/LanguageContext";
-import { PostHogProvider } from "@/lib/contexts/PostHogProvider";
 import "./globals.css";
 
 // Critical CSS for LCP optimization
@@ -85,7 +84,7 @@ export const metadata: Metadata = {
     // Resource hints for performance
     "dns-prefetch": "//fonts.googleapis.com //fonts.gstatic.com",
     preconnect:
-      "https://fonts.googleapis.com https://fonts.gstatic.com https://us.i.posthog.com",
+      "https://fonts.googleapis.com https://fonts.gstatic.com",
   },
 };
 
@@ -114,7 +113,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <LanguageProvider>
-          <PostHogProvider>{children}</PostHogProvider>
+          {children}
         </LanguageProvider>
         <SpeedInsights />
       </body>

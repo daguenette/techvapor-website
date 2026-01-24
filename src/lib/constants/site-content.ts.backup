@@ -1,0 +1,379 @@
+import { NavigationItem, LocalizedContent } from "@/types";
+
+// Professional Cleaning Services Business Content
+
+export const SITE_CONFIG = {
+  name: "SparkleClean",
+  description: {
+    fr: "Services de nettoyage professionnel pour votre maison et votre entreprise",
+    en: "Professional cleaning services for your home and business",
+  },
+  tagline: {
+    fr: "Un espace propre, un esprit serein",
+    en: "A Clean Space, A Clear Mind",
+  },
+  ctaText: {
+    fr: "Demander une soumission",
+    en: "Get a Free Quote",
+  },
+  location: "Greater Toronto Area",
+} as const;
+
+export const NAVIGATION_ITEMS: LocalizedContent<NavigationItem[]> = {
+  fr: [
+    { name: "Accueil", href: "#home" },
+    { name: "Pourquoi nous choisir", href: "#why-choose" },
+    { name: "Nos services", href: "#services" },
+    { name: "À propos", href: "#about" },
+    { name: "Contact", href: "#contact" },
+  ],
+  en: [
+    { name: "Home", href: "#home" },
+    { name: "Why Choose Us", href: "#why-choose" },
+    { name: "Services", href: "#services" },
+    { name: "About", href: "#about" },
+    { name: "Contact", href: "#contact" },
+  ],
+};
+
+export const HERO_CONTENT = {
+  title: {
+    fr: "Services de Nettoyage Professionnel",
+    en: "Professional Cleaning Services",
+  },
+  subtitle: {
+    fr: "Nous offrons des services de nettoyage de qualité supérieure pour votre maison et votre entreprise. 100% garantis.",
+    en: "We provide premium quality cleaning services for your home and business. 100% Guaranteed.",
+  },
+  description: {
+    fr: "Des professionnels formés et assurés pour un nettoyage impeccable à chaque fois.",
+    en: "Trained and insured professionals for a spotless clean every time.",
+  },
+};
+
+export const APPROACH_CONTENT = {
+  title: {
+    fr: "Pourquoi Choisir SparkleClean?",
+    en: "Why Choose SparkleClean?",
+  },
+  intro: {
+    fr: "Nous offrons une garantie de service à 100%. Chaque maison est unique, c'est pourquoi nous personnalisons nos services selon vos besoins spécifiques.",
+    en: "We offer a 100% Service Guarantee. Every home is unique, which is why we customize our services to your specific needs.",
+  },
+};
+
+export const SERVICES_CONTENT = {
+  title: {
+    fr: "Nos Services de Nettoyage",
+    en: "Our Cleaning Services",
+  },
+  subtitle: {
+    fr: "Des solutions professionnelles adaptées à tous vos besoins",
+    en: "Professional solutions tailored to all your needs",
+  },
+};
+
+export const VALUE_PROPS_CONTENT = {
+  title: {
+    fr: "Pourquoi choisir TechVapor?",
+    en: "Why choose TechVapor?",
+  },
+  items: [
+    {
+      key: "value1",
+      title: {
+        fr: "[TODO: Titre valeur 1]",
+        en: "[TODO: Value proposition 1 title]",
+      },
+      description: {
+        fr: "[TODO: Description de votre première valeur]",
+        en: "[TODO: Description of your first key value proposition]",
+      },
+    },
+    {
+      key: "value2",
+      title: {
+        fr: "[TODO: Titre valeur 2]",
+        en: "[TODO: Value proposition 2 title]",
+      },
+      description: {
+        fr: "[TODO: Description de votre deuxième valeur]",
+        en: "[TODO: Description of your second key value proposition]",
+      },
+    },
+    {
+      key: "value3",
+      title: {
+        fr: "[TODO: Titre valeur 3]",
+        en: "[TODO: Value proposition 3 title]",
+      },
+      description: {
+        fr: "[TODO: Description de votre troisième valeur]",
+        en: "[TODO: Description of your third key value proposition]",
+      },
+    },
+    {
+      key: "value4",
+      title: {
+        fr: "[TODO: Titre valeur 4]",
+        en: "[TODO: Value proposition 4 title]",
+      },
+      description: {
+        fr: "[TODO: Description de votre quatrième valeur]",
+        en: "[TODO: Description of your fourth key value proposition]",
+      },
+    },
+    {
+      key: "value5",
+      title: {
+        fr: "[TODO: Titre valeur 5]",
+        en: "[TODO: Value proposition 5 title]",
+      },
+      description: {
+        fr: "[TODO: Description de votre cinquième valeur]",
+        en: "[TODO: Description of your fifth key value proposition]",
+      },
+    },
+  ],
+};
+
+export const PROCESS_STEPS = [
+  {
+    id: 1,
+    title: {
+      fr: "[TODO: Étape 1]",
+      en: "[TODO: Step 1 Title]",
+    },
+    subtitle: {
+      fr: "[TODO: Sous-titre étape 1]",
+      en: "[TODO: Step 1 subtitle]",
+    },
+    description: {
+      fr: "[TODO: Description du processus étape 1 en français]",
+      en: "[TODO: Describe the first step of your process]",
+    },
+  },
+  {
+    id: 2,
+    title: {
+      fr: "[TODO: Étape 2]",
+      en: "[TODO: Step 2 Title]",
+    },
+    subtitle: {
+      fr: "[TODO: Sous-titre étape 2]",
+      en: "[TODO: Step 2 subtitle]",
+    },
+    description: {
+      fr: "[TODO: Description du processus étape 2 en français]",
+      en: "[TODO: Describe the second step of your process]",
+    },
+  },
+  {
+    id: 3,
+    title: {
+      fr: "[TODO: Étape 3]",
+      en: "[TODO: Step 3 Title]",
+    },
+    subtitle: {
+      fr: "[TODO: Sous-titre étape 3]",
+      en: "[TODO: Step 3 subtitle]",
+    },
+    description: {
+      fr: "[TODO: Description du processus étape 3 en français]",
+      en: "[TODO: Describe the third step of your process]",
+    },
+  },
+  {
+    id: 4,
+    title: {
+      fr: "[TODO: Étape 4]",
+      en: "[TODO: Step 4 Title]",
+    },
+    subtitle: {
+      fr: "[TODO: Sous-titre étape 4]",
+      en: "[TODO: Step 4 subtitle]",
+    },
+    description: {
+      fr: "[TODO: Description du processus étape 4 en français]",
+      en: "[TODO: Describe the fourth step of your process]",
+    },
+  },
+];
+
+export const SERVICES = [
+  {
+    id: 1,
+    title: {
+      fr: "[TODO: Service 1 titre français]",
+      en: "[TODO: Service 1 Title]",
+    },
+    description: {
+      fr: "[TODO: Description du service 1 en français]",
+      en: "[TODO: Describe your first service offering]",
+    },
+  },
+  {
+    id: 2,
+    title: {
+      fr: "[TODO: Service 2 titre français]",
+      en: "[TODO: Service 2 Title]",
+    },
+    description: {
+      fr: "[TODO: Description du service 2 en français]",
+      en: "[TODO: Describe your second service offering]",
+    },
+  },
+  {
+    id: 3,
+    title: {
+      fr: "[TODO: Service 3 titre français]",
+      en: "[TODO: Service 3 Title]",
+    },
+    description: {
+      fr: "[TODO: Description du service 3 en français]",
+      en: "[TODO: Describe your third service offering]",
+    },
+  },
+  {
+    id: 4,
+    title: {
+      fr: "[TODO: Service 4 titre français]",
+      en: "[TODO: Service 4 Title]",
+    },
+    description: {
+      fr: "[TODO: Description du service 4 en français]",
+      en: "[TODO: Describe your fourth service offering]",
+    },
+  },
+];
+
+export const USE_CASES_CONTENT = {
+  title: {
+    fr: "Nos réalisations",
+    en: "Our Work",
+  },
+};
+
+export const USE_CASES = [
+  {
+    id: 1,
+    categoryKey: "category1",
+    category: {
+      fr: "[TODO: Catégorie 1]",
+      en: "[TODO: Category 1]",
+    },
+    title: {
+      fr: "[TODO: Titre cas d'usage 1 français]",
+      en: "[TODO: Use Case 1 Title]",
+    },
+    description: {
+      fr: "[TODO: Description du cas d'usage 1 en français]",
+      en: "[TODO: Describe your first client success story or use case]",
+    },
+    metrics: {
+      fr: "[TODO: Métriques de succès]",
+      en: "[TODO: Success metrics]",
+    },
+  },
+  {
+    id: 2,
+    categoryKey: "category2",
+    category: {
+      fr: "[TODO: Catégorie 2]",
+      en: "[TODO: Category 2]",
+    },
+    title: {
+      fr: "[TODO: Titre cas d'usage 2 français]",
+      en: "[TODO: Use Case 2 Title]",
+    },
+    description: {
+      fr: "[TODO: Description du cas d'usage 2 en français]",
+      en: "[TODO: Describe your second client success story or use case]",
+    },
+    metrics: {
+      fr: "[TODO: Métriques de succès]",
+      en: "[TODO: Success metrics]",
+    },
+  },
+  {
+    id: 3,
+    categoryKey: "category3",
+    category: {
+      fr: "[TODO: Catégorie 3]",
+      en: "[TODO: Category 3]",
+    },
+    title: {
+      fr: "[TODO: Titre cas d'usage 3 français]",
+      en: "[TODO: Use Case 3 Title]",
+    },
+    description: {
+      fr: "[TODO: Description du cas d'usage 3 en français]",
+      en: "[TODO: Describe your third client success story or use case]",
+    },
+    metrics: {
+      fr: "[TODO: Métriques de succès]",
+      en: "[TODO: Success metrics]",
+    },
+  },
+];
+
+export const ABOUT_CONTENT = {
+  title: {
+    fr: "À propos de TechVapor",
+    en: "About TechVapor",
+  },
+  subtitle: {
+    fr: "[TODO: Add French subtitle about your team/company]",
+    en: "[TODO: Add a brief introduction about your company and team]",
+  },
+  conclusion: {
+    fr: "[TODO: Add French conclusion about your strengths]",
+    en: "[TODO: Summarize your key strengths and what makes you unique]",
+  },
+};
+
+export const TEAM_MEMBERS = [
+  {
+    id: 1,
+    name: "[TODO: Team Member 1 Name]",
+    specialty: {
+      fr: "[TODO: Spécialité en français]",
+      en: "[TODO: Team member specialty]",
+    },
+    bio: {
+      fr: "[TODO: Bio en français - expérience et expertise]",
+      en: "[TODO: Brief bio describing experience and expertise]",
+    },
+    strengths: {
+      fr: ["[TODO: Force 1]", "[TODO: Force 2]", "[TODO: Force 3]"],
+      en: ["[TODO: Strength 1]", "[TODO: Strength 2]", "[TODO: Strength 3]"],
+    },
+  },
+  {
+    id: 2,
+    name: "[TODO: Team Member 2 Name]",
+    specialty: {
+      fr: "[TODO: Spécialité en français]",
+      en: "[TODO: Team member specialty]",
+    },
+    bio: {
+      fr: "[TODO: Bio en français - expérience et expertise]",
+      en: "[TODO: Brief bio describing experience and expertise]",
+    },
+    strengths: {
+      fr: ["[TODO: Force 1]", "[TODO: Force 2]", "[TODO: Force 3]"],
+      en: ["[TODO: Strength 1]", "[TODO: Strength 2]", "[TODO: Strength 3]"],
+    },
+  },
+];
+
+export const CONTACT_CONTENT = {
+  title: {
+    fr: "Contactez-nous",
+    en: "Get in touch",
+  },
+  subtitle: {
+    fr: "[TODO: Add French subtitle inviting people to contact you]",
+    en: "[TODO: Add subtitle encouraging visitors to reach out]",
+  },
+};

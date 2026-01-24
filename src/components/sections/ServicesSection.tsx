@@ -1,45 +1,76 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { SERVICES_CONTENT, SERVICES } from "@/lib/constants/site-content";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
-import { Brain, Zap, Code, BarChart3 } from "lucide-react";
+import { Home, Building2, Sparkles, TruckIcon } from "lucide-react";
+import Link from "next/link";
 
-const serviceIcons = {
-  1: Brain,
-  2: Zap,
-  3: Code,
-  4: BarChart3,
+const iconMap = {
+  residential: Home,
+  commercial: Building2,
+  deep: Sparkles,
+  moveinout: TruckIcon,
 };
 
 export function ServicesSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="services" className="bg-gray-50 py-24 lg:py-32">
-      <div className="container mx-auto max-w-6xl px-4">
-        <div className="mb-16 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+    <section id="services" className="py-20 lg:py-28 bg-white">
+      <div className="container mx-auto max-w-7xl px-4">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             {t(SERVICES_CONTENT.title)}
           </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            {t(SERVICES_CONTENT.subtitle)}
+          </p>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
+        {/* Services Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {SERVICES.map((service) => {
-            const Icon = serviceIcons[service.id as keyof typeof serviceIcons];
+            const Icon = iconMap[service.id as keyof typeof iconMap] || Home;
             return (
-              <Card
+              <Link 
                 key={service.id}
-                className="bg-white shadow-lg transition-shadow hover:shadow-xl"
+                href={`/services/${service.id}`}
               >
-                <CardContent className="p-8">
-                  <div className="mb-6 flex size-14 items-center justify-center rounded-xl bg-[#F0492E]/20">
-                    <Icon className="size-7 text-[#F0492E]" />
-                  </div>
-                  <h3 className="mb-4 text-xl font-semibold text-gray-900">
-                    {t(service.title)}
-                  </h3>
-                  <p className="text-gray-600">{t(service.description)}</p>
-                </CardContent>
-              </Card>
+                <Card 
+                  className="border-2 border-gray-200 hover:border-red-300 transition-all duration-300 hover:shadow-2xl group cursor-pointer bg-white h-full"
+                >
+                  <CardContent className="p-6">
+                    {/* Icon */}
+                    <div className="mb-6">
+                      <div className="h-16 w-16 rounded-xl bg-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Icon className="h-8 w-8 text-white" strokeWidth={2} />
+                      </div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      {t(service.title)}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                      {t(service.description)}
+                    </p>
+
+                    {/* Features List */}
+                    <ul className="space-y-2 mb-4">
+                      {service.features.en.map((feature, idx) => (
+                        <li key={idx} className="text-sm text-gray-600 flex items-center gap-2">
+                          <span className="h-1.5 w-1.5 rounded-full bg-red-600" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </Link>
             );
           })}
         </div>

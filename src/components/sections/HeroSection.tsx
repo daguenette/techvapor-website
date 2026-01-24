@@ -1,50 +1,81 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { HERO_CONTENT, SITE_CONFIG } from "@/lib/constants/site-content";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
-import { analytics } from "@/lib/analytics";
-import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 export function HeroSection() {
-  const { t, language } = useLanguage();
-
-  const scrollToContact = () => {
-    analytics.business.scheduleCallClicked(language, "hero");
-    const element = document.querySelector("#contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const { language } = useLanguage();
 
   return (
-    <section
-      id="home"
-      className="relative bg-gradient-to-br from-gray-50 to-white py-24 lg:py-32"
-    >
-      <div className="container mx-auto max-w-6xl px-4">
-        <div className="mx-auto max-w-4xl text-center hero-optimized">
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-            {t(HERO_CONTENT.title)}
-          </h1>
-          <p className="sr-only">{t(HERO_CONTENT.description)}</p>
-          <p className="mb-8 text-lg text-gray-600 sm:text-xl lg:text-2xl">
-            {t(HERO_CONTENT.subtitle)}
-          </p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button
-              onClick={scrollToContact}
-              size="lg"
-              className="group bg-[#F0492E] hover:bg-[#E03E24] text-white px-8 py-3 text-lg"
-            >
-              {t(SITE_CONFIG.ctaText)}
-              <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </div>
-        </div>
+    <section id="home" className="relative min-h-[600px] lg:min-h-[700px] overflow-hidden">
+      {/* Full Width Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/497422573_10228264055646451_6047764831532838610_n.jpg"
+          alt="Technivapeur Cleaning Service"
+          fill
+          className="object-cover"
+          priority
+          unoptimized
+          style={{ objectPosition: '65% center' }}
+        />
       </div>
 
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-orange-50/30 to-transparent" />
+      {/* Blurred White Overlay - Gradient from left to 70% of the 45% section */}
+      <div className="absolute inset-y-0 left-0 w-full lg:w-[45%]">
+        {/* White opacity gradient WITHOUT blur */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 30%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 70%, transparent 100%)'
+          }}
+        ></div>
+        {/* Blur gradient - starts strong on left, fades to no blur at 70% */}
+        <div 
+          className="absolute inset-0 backdrop-blur-sm"
+          style={{
+            maskImage: 'linear-gradient(to right, black 0%, black 30%, rgba(0,0,0,0.6) 50%, transparent 70%)',
+            WebkitMaskImage: 'linear-gradient(to right, black 0%, black 30%, rgba(0,0,0,0.6) 50%, transparent 70%)'
+          }}
+        ></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 h-full">
+        <div className="grid lg:grid-cols-[30%_70%] h-full min-h-[600px] lg:min-h-[700px]">
+          {/* Left Side - Text Content (30%) */}
+          <div className="flex flex-col justify-center py-12 lg:py-20 px-4 lg:px-8 xl:px-12">
+            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              {language === "fr" 
+                ? "Nettoyage de tapis commercial et résidentiel"
+                : "Commercial and Residential Carpet Cleaning"}
+            </h1>
+            
+            <p className="text-xl lg:text-2xl text-gray-700 mb-8 leading-relaxed">
+              {language === "fr" 
+                ? "Montréal - Rive-Nord et environs"
+                : "Montreal - North Shore and Surrounding Areas"}
+            </p>
+            
+            {/* CTA Button */}
+            <div>
+              <Link href="/#contact">
+                <Button
+                  size="lg"
+                  className="bg-red-600 hover:bg-red-700 text-white px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
+                >
+                  {language === "fr" ? "Demander une soumission" : "Get a Free Quote"}
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Side - Image shows through */}
+          <div className="hidden lg:block"></div>
+        </div>
+      </div>
     </section>
   );
 }

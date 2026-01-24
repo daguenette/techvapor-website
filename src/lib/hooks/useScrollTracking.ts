@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { analytics } from "@/lib/analytics";
 
 export function useScrollTracking(language: string) {
   const scrollDepthRef = useRef<Set<number>>(new Set());
@@ -23,7 +22,7 @@ export function useScrollTracking(language: string) {
           depths.forEach((depth) => {
             if (scrollPercent >= depth && !scrollDepthRef.current.has(depth)) {
               scrollDepthRef.current.add(depth);
-              analytics.business.scrollDepth(depth, language);
+              // Removed analytics tracking
             }
           });
 
@@ -37,7 +36,7 @@ export function useScrollTracking(language: string) {
 
             if (isVisible && !sectionViewedRef.current.has(section.id)) {
               sectionViewedRef.current.add(section.id);
-              analytics.business.sectionViewed(section.id, language);
+              // Removed analytics tracking
             }
           });
 
@@ -49,8 +48,7 @@ export function useScrollTracking(language: string) {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
-    // Track session start
-    analytics.business.sessionStart(language);
+    // Removed session start tracking
 
     return () => {
       window.removeEventListener("scroll", handleScroll);

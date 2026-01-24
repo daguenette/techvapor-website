@@ -1,38 +1,36 @@
 import { NavigationItem, LocalizedContent } from "@/types";
 
-// TODO: Update all content with TechVapor specific information
+// Professional Cleaning Services Business Content - PLACEHOLDER
 
 export const SITE_CONFIG = {
-  name: "TechVapor",
+  name: "Technivapeur",
   description: {
-    fr: "Solutions technologiques innovantes - [TODO: Add French description]",
-    en: "Innovative technology solutions - [TODO: Add company description]",
+    fr: "Services de nettoyage à la vapeur professionnel pour votre maison et votre entreprise",
+    en: "Professional steam cleaning services for your home and business",
   },
   tagline: {
-    fr: "[TODO: Add French tagline for TechVapor]",
-    en: "[TODO: Add your company tagline here]",
+    fr: "Un espace propre, un esprit serein",
+    en: "A Clean Space, A Clear Mind",
   },
   ctaText: {
-    fr: "Commencer",
-    en: "Get Started",
+    fr: "Demander une soumission",
+    en: "Get a Free Quote",
   },
-  location: "[TODO: Add location]",
+  location: "Greater Toronto Area",
+  phone: "1-855-TECHVAP",
+  email: "info@technivapeur.com",
 } as const;
 
 export const NAVIGATION_ITEMS: LocalizedContent<NavigationItem[]> = {
   fr: [
     { name: "Accueil", href: "#home" },
-    { name: "Notre approche", href: "#approach" },
     { name: "Nos services", href: "#services" },
-    { name: "Cas d'usage", href: "#cases" },
     { name: "À propos", href: "#about" },
     { name: "Contact", href: "#contact" },
   ],
   en: [
     { name: "Home", href: "#home" },
-    { name: "Our Approach", href: "#approach" },
     { name: "Services", href: "#services" },
-    { name: "Client Cases", href: "#cases" },
     { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
   ],
@@ -40,338 +38,272 @@ export const NAVIGATION_ITEMS: LocalizedContent<NavigationItem[]> = {
 
 export const HERO_CONTENT = {
   title: {
-    fr: "Bienvenue chez TechVapor - [TODO: Add French title]",
-    en: "Welcome to TechVapor - [TODO: Add compelling headline]",
+    fr: "Services de Nettoyage Professionnel",
+    en: "Professional Cleaning Services",
   },
   subtitle: {
-    fr: "[TODO: Add French subtitle describing your value proposition]",
-    en: "[TODO: Add subtitle describing what TechVapor does and the value you provide]",
+    fr: "Nous offrons des services de nettoyage de qualité supérieure pour votre maison et votre entreprise",
+    en: "We provide premium quality cleaning services for your home and business",
   },
   description: {
-    fr: "TechVapor - [TODO: Add SEO description in French]",
-    en: "TechVapor - [TODO: Add SEO description for your company]",
+    fr: "Des professionnels formés et assurés • Satisfaction garantie à 100% • Produits écologiques",
+    en: "Trained & Insured Professionals • 100% Satisfaction Guaranteed • Eco-Friendly Products",
+  },
+  cta: {
+    fr: "Demander une soumission gratuite",
+    en: "Get a Free Quote",
+  },
+  ctaSecondary: {
+    fr: "Appelez-nous",
+    en: "Call Us Today",
   },
 };
 
 export const APPROACH_CONTENT = {
   title: {
-    fr: "Notre approche - [TODO: Add French title]",
-    en: "Our Approach - [TODO: Add approach title]",
+    fr: "Pourquoi Choisir Technivapeur?",
+    en: "Why Choose Technivapeur?",
   },
   intro: {
-    fr: "[TODO: Add description of your methodology in French]",
-    en: "[TODO: Describe your company's approach and methodology here]",
+    fr: "Nous offrons une garantie de service à 100%. Chaque maison est unique, c'est pourquoi nous personnalisons nos services selon vos besoins spécifiques.",
+    en: "We offer a 100% Service Guarantee. Every home is unique, which is why we customize our services to your specific needs.",
   },
-};
-
-export const SERVICES_CONTENT = {
-  title: {
-    fr: "Nos services - [TODO: Add French title]",
-    en: "Our Services - [TODO: Add services section title]",
+  subtitle: {
+    fr: "Notre Garantie de Service",
+    en: "Our Guarantee of Service",
   },
-};
-
-export const VALUE_PROPS_CONTENT = {
-  title: {
-    fr: "Pourquoi choisir TechVapor?",
-    en: "Why choose TechVapor?",
-  },
-  items: [
-    {
-      key: "value1",
-      title: {
-        fr: "[TODO: Titre valeur 1]",
-        en: "[TODO: Value proposition 1 title]",
-      },
-      description: {
-        fr: "[TODO: Description de votre première valeur]",
-        en: "[TODO: Description of your first key value proposition]",
-      },
-    },
-    {
-      key: "value2",
-      title: {
-        fr: "[TODO: Titre valeur 2]",
-        en: "[TODO: Value proposition 2 title]",
-      },
-      description: {
-        fr: "[TODO: Description de votre deuxième valeur]",
-        en: "[TODO: Description of your second key value proposition]",
-      },
-    },
-    {
-      key: "value3",
-      title: {
-        fr: "[TODO: Titre valeur 3]",
-        en: "[TODO: Value proposition 3 title]",
-      },
-      description: {
-        fr: "[TODO: Description de votre troisième valeur]",
-        en: "[TODO: Description of your third key value proposition]",
-      },
-    },
-    {
-      key: "value4",
-      title: {
-        fr: "[TODO: Titre valeur 4]",
-        en: "[TODO: Value proposition 4 title]",
-      },
-      description: {
-        fr: "[TODO: Description de votre quatrième valeur]",
-        en: "[TODO: Description of your fourth key value proposition]",
-      },
-    },
-    {
-      key: "value5",
-      title: {
-        fr: "[TODO: Titre valeur 5]",
-        en: "[TODO: Value proposition 5 title]",
-      },
-      description: {
-        fr: "[TODO: Description de votre cinquième valeur]",
-        en: "[TODO: Description of your fifth key value proposition]",
-      },
-    },
-  ],
 };
 
 export const PROCESS_STEPS = [
   {
     id: 1,
     title: {
-      fr: "[TODO: Étape 1]",
-      en: "[TODO: Step 1 Title]",
+      fr: "Professionnels Formés",
+      en: "Trained Professionals",
     },
     subtitle: {
-      fr: "[TODO: Sous-titre étape 1]",
-      en: "[TODO: Step 1 subtitle]",
+      fr: "Équipe qualifiée et assurée",
+      en: "Qualified & Insured Team",
     },
     description: {
-      fr: "[TODO: Description du processus étape 1 en français]",
-      en: "[TODO: Describe the first step of your process]",
+      fr: "Nos équipes arrivent en uniforme, sont vérifiées et entièrement assurées pour votre tranquillité d'esprit.",
+      en: "Our teams arrive in uniform, are background-checked and fully insured for your peace of mind.",
     },
   },
   {
     id: 2,
     title: {
-      fr: "[TODO: Étape 2]",
-      en: "[TODO: Step 2 Title]",
+      fr: "Garantie 100%",
+      en: "100% Guarantee",
     },
     subtitle: {
-      fr: "[TODO: Sous-titre étape 2]",
-      en: "[TODO: Step 2 subtitle]",
+      fr: "Satisfaction garantie",
+      en: "Satisfaction Guaranteed",
     },
     description: {
-      fr: "[TODO: Description du processus étape 2 en français]",
-      en: "[TODO: Describe the second step of your process]",
+      fr: "Si vous n'êtes pas complètement satisfait, nous reviendrons nettoyer gratuitement ou corrigerons la situation.",
+      en: "If you're not completely satisfied, we'll re-clean for free or make it right.",
     },
   },
   {
     id: 3,
     title: {
-      fr: "[TODO: Étape 3]",
-      en: "[TODO: Step 3 Title]",
+      fr: "Plans Personnalisés",
+      en: "Customized Plans",
     },
     subtitle: {
-      fr: "[TODO: Sous-titre étape 3]",
-      en: "[TODO: Step 3 subtitle]",
+      fr: "Adapté à vos besoins",
+      en: "Tailored to Your Needs",
     },
     description: {
-      fr: "[TODO: Description du processus étape 3 en français]",
-      en: "[TODO: Describe the third step of your process]",
+      fr: "Chaque maison est unique. Nous créons un plan de nettoyage personnalisé qui correspond à votre budget.",
+      en: "Every home is unique. We create a customized cleaning plan that fits your budget.",
     },
   },
   {
     id: 4,
     title: {
-      fr: "[TODO: Étape 4]",
-      en: "[TODO: Step 4 Title]",
+      fr: "Produits Écologiques",
+      en: "Eco-Friendly Products",
     },
     subtitle: {
-      fr: "[TODO: Sous-titre étape 4]",
-      en: "[TODO: Step 4 subtitle]",
+      fr: "Sans danger pour votre famille",
+      en: "Safe for Your Family",
     },
     description: {
-      fr: "[TODO: Description du processus étape 4 en français]",
-      en: "[TODO: Describe the fourth step of your process]",
+      fr: "Nous utilisons des produits de nettoyage écologiques, sûrs pour vos enfants et vos animaux.",
+      en: "We use eco-friendly cleaning products that are safe for your children and pets.",
     },
   },
 ];
 
-export const SERVICES = [
-  {
-    id: 1,
-    title: {
-      fr: "[TODO: Service 1 titre français]",
-      en: "[TODO: Service 1 Title]",
-    },
-    description: {
-      fr: "[TODO: Description du service 1 en français]",
-      en: "[TODO: Describe your first service offering]",
-    },
-  },
-  {
-    id: 2,
-    title: {
-      fr: "[TODO: Service 2 titre français]",
-      en: "[TODO: Service 2 Title]",
-    },
-    description: {
-      fr: "[TODO: Description du service 2 en français]",
-      en: "[TODO: Describe your second service offering]",
-    },
-  },
-  {
-    id: 3,
-    title: {
-      fr: "[TODO: Service 3 titre français]",
-      en: "[TODO: Service 3 Title]",
-    },
-    description: {
-      fr: "[TODO: Description du service 3 en français]",
-      en: "[TODO: Describe your third service offering]",
-    },
-  },
-  {
-    id: 4,
-    title: {
-      fr: "[TODO: Service 4 titre français]",
-      en: "[TODO: Service 4 Title]",
-    },
-    description: {
-      fr: "[TODO: Description du service 4 en français]",
-      en: "[TODO: Describe your fourth service offering]",
-    },
-  },
-];
-
-export const USE_CASES_CONTENT = {
+export const SERVICES_CONTENT = {
   title: {
-    fr: "Nos réalisations",
-    en: "Our Work",
+    fr: "Nos Services de Nettoyage",
+    en: "Our Cleaning Services",
+  },
+  subtitle: {
+    fr: "Des solutions professionnelles adaptées à tous vos besoins",
+    en: "Professional solutions tailored to all your needs",
   },
 };
 
-export const USE_CASES = [
+export const SERVICES = [
   {
-    id: 1,
-    categoryKey: "category1",
-    category: {
-      fr: "[TODO: Catégorie 1]",
-      en: "[TODO: Category 1]",
-    },
+    id: "residential",
     title: {
-      fr: "[TODO: Titre cas d'usage 1 français]",
-      en: "[TODO: Use Case 1 Title]",
+      fr: "Nettoyage Résidentiel",
+      en: "Residential Cleaning",
     },
     description: {
-      fr: "[TODO: Description du cas d'usage 1 en français]",
-      en: "[TODO: Describe your first client success story or use case]",
+      fr: "Service de nettoyage régulier ou ponctuel pour votre maison. Nous prenons soin de chaque détail.",
+      en: "Regular or one-time cleaning service for your home. We take care of every detail.",
     },
-    metrics: {
-      fr: "[TODO: Métriques de succès]",
-      en: "[TODO: Success metrics]",
+    features: {
+      fr: ["Cuisine", "Salles de bain", "Chambres", "Espaces communs"],
+      en: ["Kitchen", "Bathrooms", "Bedrooms", "Common Areas"],
     },
   },
   {
-    id: 2,
-    categoryKey: "category2",
-    category: {
-      fr: "[TODO: Catégorie 2]",
-      en: "[TODO: Category 2]",
-    },
+    id: "commercial",
     title: {
-      fr: "[TODO: Titre cas d'usage 2 français]",
-      en: "[TODO: Use Case 2 Title]",
+      fr: "Nettoyage Commercial",
+      en: "Commercial Cleaning",
     },
     description: {
-      fr: "[TODO: Description du cas d'usage 2 en français]",
-      en: "[TODO: Describe your second client success story or use case]",
+      fr: "Services professionnels pour bureaux, commerces et espaces commerciaux de toutes tailles.",
+      en: "Professional services for offices, retail spaces and commercial properties of all sizes.",
     },
-    metrics: {
-      fr: "[TODO: Métriques de succès]",
-      en: "[TODO: Success metrics]",
+    features: {
+      fr: ["Bureaux", "Commerces", "Immeubles", "Espaces partagés"],
+      en: ["Offices", "Retail", "Buildings", "Shared Spaces"],
     },
   },
   {
-    id: 3,
-    categoryKey: "category3",
-    category: {
-      fr: "[TODO: Catégorie 3]",
-      en: "[TODO: Category 3]",
-    },
+    id: "deep",
     title: {
-      fr: "[TODO: Titre cas d'usage 3 français]",
-      en: "[TODO: Use Case 3 Title]",
+      fr: "Grand Nettoyage",
+      en: "Deep Cleaning",
     },
     description: {
-      fr: "[TODO: Description du cas d'usage 3 en français]",
-      en: "[TODO: Describe your third client success story or use case]",
+      fr: "Nettoyage en profondeur pour un résultat impeccable. Idéal pour le changement de saison.",
+      en: "Thorough deep cleaning for spotless results. Perfect for seasonal refresh.",
     },
-    metrics: {
-      fr: "[TODO: Métriques de succès]",
-      en: "[TODO: Success metrics]",
+    features: {
+      fr: ["Détails minutieux", "Zones difficiles", "Désinfection", "Résultats durables"],
+      en: ["Detailed work", "Hard-to-reach areas", "Sanitization", "Lasting results"],
+    },
+  },
+  {
+    id: "moveinout",
+    title: {
+      fr: "Déménagement",
+      en: "Move-In/Move-Out",
+    },
+    description: {
+      fr: "Service complet pour préparer votre nouvelle maison ou nettoyer avant de partir.",
+      en: "Complete service to prepare your new home or clean before you leave.",
+    },
+    features: {
+      fr: ["Nettoyage complet", "Armoires & Tiroirs", "Électroménagers", "Murs & Plafonds"],
+      en: ["Full Clean", "Cabinets & Drawers", "Appliances", "Walls & Ceilings"],
     },
   },
 ];
 
 export const ABOUT_CONTENT = {
   title: {
-    fr: "À propos de TechVapor",
-    en: "About TechVapor",
+    fr: "Notre Garantie de Service",
+    en: "Our Service Guarantee",
   },
   subtitle: {
-    fr: "[TODO: Add French subtitle about your team/company]",
-    en: "[TODO: Add a brief introduction about your company and team]",
+    fr: "100% Satisfaction Garantie",
+    en: "100% Satisfaction Guaranteed",
   },
-  conclusion: {
-    fr: "[TODO: Add French conclusion about your strengths]",
-    en: "[TODO: Summarize your key strengths and what makes you unique]",
+  intro: {
+    fr: "Nous savons que vous apprécierez la qualité premium de notre service de nettoyage, c'est pourquoi nous offrons une garantie de service à 100%!",
+    en: "We know you'll enjoy the premium quality of our cleaning service, so we offer a 100% Guarantee of Service!",
   },
+  sections: [
+    {
+      title: {
+        fr: "Personnalisé pour Vous",
+        en: "Customized for You",
+      },
+      content: {
+        fr: "Nous traitons tous nos clients comme des individus. Puisque chaque maison est unique, nous n'avons pas de prix fixes. Nous visitons votre maison et fournissons une estimation gratuite et sans obligation.",
+        en: "We treat all our clients as individuals. Since every home is unique, we do not have set prices. We visit your home and provide a free, no-obligation estimate.",
+      },
+    },
+    {
+      title: {
+        fr: "Équipe Professionnelle",
+        en: "Professional Team",
+      },
+      content: {
+        fr: "Nous envoyons une équipe de deux professionnels formés à votre domicile. Ils arrivent en uniforme, sont vérifiés et entièrement assurés. Notre équipe apporte tout l'équipement et les fournitures nécessaires.",
+        en: "We send a team of two trained professionals to your home. They arrive in uniform, are reference-checked and fully insured. Our team brings all necessary equipment and supplies.",
+      },
+    },
+    {
+      title: {
+        fr: "Notre Engagement",
+        en: "Our Commitment",
+      },
+      content: {
+        fr: "Nous nous efforçons de fournir le plus haut niveau de qualité, de service et de valeur à chaque client. Si vous n'êtes pas complètement satisfait, informez-nous immédiatement et nous re-nettoierons gratuitement.",
+        en: "We strive to provide the highest level of quality, service and value to each client. If you are not completely satisfied, inform us immediately and we will re-clean free of charge.",
+      },
+    },
+  ],
 };
 
 export const TEAM_MEMBERS = [
   {
-    id: 1,
-    name: "[TODO: Team Member 1 Name]",
-    specialty: {
-      fr: "[TODO: Spécialité en français]",
-      en: "[TODO: Team member specialty]",
-    },
+    name: "Jane Smith",
+    role: { fr: "Directrice Générale", en: "General Manager" },
     bio: {
-      fr: "[TODO: Bio en français - expérience et expertise]",
-      en: "[TODO: Brief bio describing experience and expertise]",
+      fr: "15 ans d'expérience dans l'industrie du nettoyage",
+      en: "15 years of experience in the cleaning industry",
     },
-    strengths: {
-      fr: ["[TODO: Force 1]", "[TODO: Force 2]", "[TODO: Force 3]"],
-      en: ["[TODO: Strength 1]", "[TODO: Strength 2]", "[TODO: Strength 3]"],
-    },
-  },
-  {
-    id: 2,
-    name: "[TODO: Team Member 2 Name]",
-    specialty: {
-      fr: "[TODO: Spécialité en français]",
-      en: "[TODO: Team member specialty]",
-    },
-    bio: {
-      fr: "[TODO: Bio en français - expérience et expertise]",
-      en: "[TODO: Brief bio describing experience and expertise]",
-    },
-    strengths: {
-      fr: ["[TODO: Force 1]", "[TODO: Force 2]", "[TODO: Force 3]"],
-      en: ["[TODO: Strength 1]", "[TODO: Strength 2]", "[TODO: Strength 3]"],
-    },
+    image: "/team/placeholder.jpg",
   },
 ];
 
 export const CONTACT_CONTENT = {
   title: {
-    fr: "Contactez-nous",
-    en: "Get in touch",
+    fr: "Demander une Soumission",
+    en: "Request a Quote",
   },
   subtitle: {
-    fr: "[TODO: Add French subtitle inviting people to contact you]",
-    en: "[TODO: Add subtitle encouraging visitors to reach out]",
+    fr: "Contactez-nous pour une estimation gratuite",
+    en: "Contact us for a free estimate",
   },
+  formLabels: {
+    firstName: { fr: "Prénom", en: "First Name" },
+    lastName: { fr: "Nom", en: "Last Name" },
+    email: { fr: "Courriel", en: "Email" },
+    phone: { fr: "Téléphone", en: "Phone" },
+    message: { fr: "Message", en: "Message" },
+    submit: { fr: "Envoyer", en: "Submit" },
+  },
+  successMessage: {
+    fr: "Merci! Nous vous contacterons bientôt.",
+    en: "Thank you! We'll contact you soon.",
+  },
+  errorMessage: {
+    fr: "Erreur lors de l'envoi. Veuillez réessayer.",
+    en: "Error sending. Please try again.",
+  },
+};
+
+export const USE_CASES_CONTENT = {
+  title: { fr: "Cas d'usage", en: "Use Cases" },
+};
+
+export const USE_CASES = [];
+
+export const VALUE_PROPS_CONTENT = {
+  title: { fr: "Nos Avantages", en: "Our Benefits" },
+  items: [],
 };
