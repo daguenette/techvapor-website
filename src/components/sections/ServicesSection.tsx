@@ -3,22 +3,31 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { SERVICES_CONTENT, SERVICES } from "@/lib/constants/site-content";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
-import { Home, Building2, Sparkles, TruckIcon } from "lucide-react";
+import { Home, Building2, Sofa, Wind } from "lucide-react";
 import Link from "next/link";
 
 const iconMap = {
   residential: Home,
   commercial: Building2,
-  deep: Sparkles,
-  moveinout: TruckIcon,
+  furniture: Sofa,
+  ducts: Wind,
 };
 
 export function ServicesSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="services" className="py-20 lg:py-28 bg-white">
-      <div className="container mx-auto max-w-7xl px-4">
+    <section id="services" className="relative bg-white -mt-12 lg:-mt-16">
+      {/* Diagonal top edge overlapping hero */}
+      <div 
+        className="absolute top-0 left-0 right-0 h-20 lg:h-24 bg-white z-10"
+        style={{
+          clipPath: 'polygon(0 0, 15% 100%, 100% 100%, 100% 0)'
+        }}
+      ></div>
+      
+      <div className="relative pt-24 lg:pt-28 pb-20 lg:pb-28">
+        <div className="container mx-auto max-w-7xl px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
@@ -73,6 +82,7 @@ export function ServicesSection() {
               </Link>
             );
           })}
+        </div>
         </div>
       </div>
     </section>

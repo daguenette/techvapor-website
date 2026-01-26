@@ -19,7 +19,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full bg-white shadow-md">
       {/* Top Bar */}
       <div className="bg-black text-white py-2">
-        <div className="container mx-auto max-w-7xl px-4 flex justify-between items-center text-sm">
+        <div className="w-full px-8 flex justify-between items-center text-sm">
           <div className="flex items-center gap-4">
             <Phone className="h-4 w-4" />
             <a href={`tel:${SITE_CONFIG.phone}`} className="font-semibold hover:underline">
@@ -31,10 +31,10 @@ export function Header() {
       </div>
 
       {/* Main Nav */}
-      <div className="container mx-auto max-w-7xl px-4">
-        <div className="flex h-20 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center group">
+      <div className="w-full px-8">
+        <div className="flex h-20 items-center justify-between relative">
+          {/* Logo - LEFT */}
+          <Link href="/" className="flex items-center group flex-shrink-0">
             <Image
               src="/logoT.webp"
               alt="Technivapeur"
@@ -46,7 +46,7 @@ export function Header() {
             />
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav - CENTER */}
           <nav className="hidden items-center gap-8 md:flex absolute left-1/2 -translate-x-1/2">
             {navigationItems.map((item) => {
               // Services dropdown
@@ -57,27 +57,22 @@ export function Header() {
                     className="relative group"
                   >
                     <button
-                      className="flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-red-600 transition-colors py-2"
+                      className="flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-red-600 transition-colors h-20"
                     >
                       {item.name}
                       <ChevronDown className="h-4 w-4" />
                     </button>
                     
-                    {/* Dropdown Menu */}
-                    <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                      <div className="w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2">
+                    {/* Dropdown Menu - Connected to navbar */}
+                    <div className="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                      <div className="min-w-[220px] bg-white shadow-lg border-t-2 border-t-red-600 border-x border-b border-gray-100 py-1">
                         {SERVICES.map((service) => (
                           <Link
                             key={service.id}
                             href={`/services/${service.id}`}
-                            className="block w-full px-4 py-3 text-left hover:bg-red-50 transition-colors"
+                            className="block px-4 py-2 text-sm font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors"
                           >
-                            <div className="font-semibold text-gray-900 text-sm">
-                              {t(service.title)}
-                            </div>
-                            <div className="text-xs text-gray-600 mt-1">
-                              {t(service.description).substring(0, 60)}...
-                            </div>
+                            {t(service.title)}
                           </Link>
                         ))}
                       </div>
@@ -99,8 +94,8 @@ export function Header() {
             })}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA Button - RIGHT */}
+          <div className="hidden md:block flex-shrink-0">
             <Link href="/#contact">
               <Button
                 className="bg-red-600 hover:bg-red-700 text-white font-semibold px-6"

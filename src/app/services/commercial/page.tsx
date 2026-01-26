@@ -9,6 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SERVICES } from "@/lib/constants/site-content";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
 import { Building2, Sparkles, Wind, Sofa, DoorOpen, Send } from "lucide-react";
+import Image from "next/image";
 
 export default function CommercialCleaningPage() {
   const { t, language } = useLanguage();
@@ -25,14 +26,14 @@ export default function CommercialCleaningPage() {
       <Header />
       <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-red-600">
+      <section className="relative py-20 lg:py-32 bg-white">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
+              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
                 {t(service.title)}
               </h1>
-              <p className="text-xl lg:text-2xl text-white/90 leading-relaxed">
+              <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed">
                 {language === "fr"
                   ? "Maintenez un environnement de travail professionnel et accueillant avec nos services de nettoyage commercial adaptés à vos besoins d'affaires."
                   : "Maintain a professional and welcoming work environment with our commercial cleaning services tailored to your business needs."}
@@ -41,7 +42,7 @@ export default function CommercialCleaningPage() {
                 <a href="#service-inquiry">
                   <Button
                     size="lg"
-                    className="bg-white text-red-600 hover:bg-gray-100 font-semibold px-8 py-6 text-lg"
+                    className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-6 text-lg"
                   >
                     {language === "fr" ? "Demander une soumission" : "Submit a Service Inquiry"}
                   </Button>
@@ -49,9 +50,22 @@ export default function CommercialCleaningPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-white/10 backdrop-blur-sm rounded-3xl flex items-center justify-center">
-                <Building2 className="h-48 w-48 text-white/80" strokeWidth={1.5} />
-              </div>
+              {service.image ? (
+                <div className="aspect-square rounded-3xl overflow-hidden">
+                  <Image
+                    src={`/${service.image}`}
+                    alt={t(service.title)}
+                    width={600}
+                    height={600}
+                    className="object-cover w-full h-full"
+                    unoptimized
+                  />
+                </div>
+              ) : (
+                <div className="aspect-square bg-gray-800 rounded-3xl flex items-center justify-center">
+                  <Building2 className="h-48 w-48 text-gray-600" strokeWidth={1.5} />
+                </div>
+              )}
             </div>
           </div>
         </div>

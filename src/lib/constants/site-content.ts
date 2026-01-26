@@ -163,6 +163,7 @@ export const SERVICES = [
       fr: ["Cuisine", "Salles de bain", "Chambres", "Espaces communs"],
       en: ["Kitchen", "Bathrooms", "Bedrooms", "Common Areas"],
     },
+    image: "content_pic_big3.webp",
   },
   {
     id: "commercial",
@@ -178,36 +179,39 @@ export const SERVICES = [
       fr: ["Bureaux", "Commerces", "Immeubles", "Espaces partagés"],
       en: ["Offices", "Retail", "Buildings", "Shared Spaces"],
     },
+    image: "2-commercial.webp",
   },
   {
-    id: "deep",
+    id: "furniture",
     title: {
-      fr: "Grand Nettoyage",
-      en: "Deep Cleaning",
+      fr: "Nettoyage des Meubles",
+      en: "Furniture Cleaning",
     },
     description: {
-      fr: "Nettoyage en profondeur pour un résultat impeccable. Idéal pour le changement de saison.",
-      en: "Thorough deep cleaning for spotless results. Perfect for seasonal refresh.",
+      fr: "Nettoyage professionnel de vos meubles rembourrés, canapés et chaises.",
+      en: "Professional cleaning of your upholstered furniture, sofas and chairs.",
     },
     features: {
-      fr: ["Détails minutieux", "Zones difficiles", "Désinfection", "Résultats durables"],
-      en: ["Detailed work", "Hard-to-reach areas", "Sanitization", "Lasting results"],
+      fr: ["Canapés", "Fauteuils", "Chaises", "Tissus d'ameublement"],
+      en: ["Sofas", "Armchairs", "Chairs", "Upholstery"],
     },
+    image: "469648923_122174149208108452_263683896868960210_n.jpg",
   },
   {
-    id: "moveinout",
+    id: "ducts",
     title: {
-      fr: "Déménagement",
-      en: "Move-In/Move-Out",
+      fr: "Nettoyage de Conduits",
+      en: "Duct Cleaning",
     },
     description: {
-      fr: "Service complet pour préparer votre nouvelle maison ou nettoyer avant de partir.",
-      en: "Complete service to prepare your new home or clean before you leave.",
+      fr: "Nettoyage complet de vos conduits de ventilation pour un air plus sain.",
+      en: "Complete cleaning of your ventilation ducts for healthier air.",
     },
     features: {
-      fr: ["Nettoyage complet", "Armoires & Tiroirs", "Électroménagers", "Murs & Plafonds"],
-      en: ["Full Clean", "Cabinets & Drawers", "Appliances", "Walls & Ceilings"],
+      fr: ["Conduits d'air", "Ventilation", "Qualité d'air", "Système HVAC"],
+      en: ["Air ducts", "Ventilation", "Air quality", "HVAC system"],
     },
+    image: null,
   },
 ];
 

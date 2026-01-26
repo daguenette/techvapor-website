@@ -10,8 +10,8 @@ export function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-[600px] lg:min-h-[700px] overflow-hidden">
-      {/* Full Width Background Image */}
-      <div className="absolute inset-0">
+      {/* Background Image - Right Side */}
+      <div className="absolute inset-0 lg:left-[45%]">
         <Image
           src="/497422573_10228264055646451_6047764831532838610_n.jpg"
           alt="Technivapeur Cleaning Service"
@@ -19,44 +19,32 @@ export function HeroSection() {
           className="object-cover"
           priority
           unoptimized
-          style={{ objectPosition: '65% center' }}
+          style={{ objectPosition: '40% center' }}
         />
       </div>
 
-      {/* Blurred White Overlay - Gradient from left to 70% of the 45% section */}
-      <div className="absolute inset-y-0 left-0 w-full lg:w-[45%]">
-        {/* White opacity gradient WITHOUT blur */}
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 30%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 70%, transparent 100%)'
-          }}
-        ></div>
-        {/* Blur gradient - starts strong on left, fades to no blur at 70% */}
-        <div 
-          className="absolute inset-0 backdrop-blur-sm"
-          style={{
-            maskImage: 'linear-gradient(to right, black 0%, black 30%, rgba(0,0,0,0.6) 50%, transparent 70%)',
-            WebkitMaskImage: 'linear-gradient(to right, black 0%, black 30%, rgba(0,0,0,0.6) 50%, transparent 70%)'
-          }}
-        ></div>
-      </div>
+      {/* Diagonal White Section - Left Side */}
+      <div 
+        className="absolute inset-y-0 left-0 bg-white lg:w-[50%]"
+        style={{
+          clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0 100%)'
+        }}
+      ></div>
 
       {/* Content */}
-      <div className="relative z-10 h-full">
-        <div className="grid lg:grid-cols-[30%_70%] h-full min-h-[600px] lg:min-h-[700px]">
-          {/* Left Side - Text Content (30%) */}
-          <div className="flex flex-col justify-center py-12 lg:py-20 px-4 lg:px-8 xl:px-12">
+      <div className="relative z-10 h-full flex items-center min-h-[600px] lg:min-h-[700px]">
+        <div className="w-full px-6 lg:px-12 xl:px-16">
+          <div className="max-w-xl lg:max-w-lg xl:max-w-xl">
             <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               {language === "fr" 
-                ? "Nettoyage de tapis commercial et résidentiel"
-                : "Commercial and Residential Carpet Cleaning"}
+                ? "Vous avez un nettoyage de tapis à faire ?"
+                : "Do you have carpets to clean?"}
             </h1>
             
-            <p className="text-xl lg:text-2xl text-gray-700 mb-8 leading-relaxed">
+            <p className="text-lg lg:text-xl text-gray-700 mb-10 leading-relaxed">
               {language === "fr" 
-                ? "Montréal - Rive-Nord et environs"
-                : "Montreal - North Shore and Surrounding Areas"}
+                ? "Nous sommes spécialisés pour ce type de travail."
+                : "We specialize in this type of work."}
             </p>
             
             {/* CTA Button */}
@@ -71,9 +59,6 @@ export function HeroSection() {
               </Link>
             </div>
           </div>
-
-          {/* Right Side - Image shows through */}
-          <div className="hidden lg:block"></div>
         </div>
       </div>
     </section>
