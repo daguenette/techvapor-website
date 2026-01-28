@@ -42,8 +42,7 @@ export const metadata: Metadata = {
   title: "TechVapor - [TODO: Add your site title]",
   description:
     "[TODO: Add your company description for SEO - explain what TechVapor does and the value you provide]",
-  keywords:
-    "TechVapor, [TODO: Add relevant keywords for your business]",
+  keywords: "TechVapor, [TODO: Add relevant keywords for your business]",
   authors: [{ name: "TechVapor" }],
   icons: {
     icon: [
@@ -55,8 +54,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "TechVapor - [TODO: Add Open Graph title]",
-    description:
-      "[TODO: Add Open Graph description for social media sharing]",
+    description: "[TODO: Add Open Graph description for social media sharing]",
     type: "website",
     locale: "en_CA", // TODO: Update if different locale
     siteName: "TechVapor",
@@ -72,8 +70,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "TechVapor - [TODO: Add Twitter card title]",
-    description:
-      "[TODO: Add Twitter card description]",
+    description: "[TODO: Add Twitter card description]",
     images: ["/vh_logo.svg"], // TODO: Replace with your logo
   },
   robots: {
@@ -83,8 +80,7 @@ export const metadata: Metadata = {
   other: {
     // Resource hints for performance
     "dns-prefetch": "//fonts.googleapis.com //fonts.gstatic.com",
-    preconnect:
-      "https://fonts.googleapis.com https://fonts.gstatic.com",
+    preconnect: "https://fonts.googleapis.com https://fonts.gstatic.com",
   },
 };
 
@@ -96,6 +92,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover"
+        />
+        <meta name="theme-color" content="#dc2626" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
         <style dangerouslySetInnerHTML={{ __html: criticalCSS }} />
         <link rel="icon" href="/vh_logo.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/vh_logo.svg" />
@@ -112,9 +119,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+        <LanguageProvider>{children}</LanguageProvider>
         <SpeedInsights />
       </body>
     </html>

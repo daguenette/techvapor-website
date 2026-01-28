@@ -67,39 +67,46 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="pt-8 lg:pt-12 pb-20 lg:pb-28 bg-white">
-      <div className="container mx-auto max-w-6xl px-4">
+    <section
+      id="contact"
+      className="pt-8 sm:pt-10 lg:pt-12 pb-12 sm:pb-16 md:pb-20 lg:pb-28 bg-white"
+    >
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
             {t(CONTACT_CONTENT.title)}
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
             {t(CONTACT_CONTENT.subtitle)}
           </p>
         </div>
 
         {/* Contact Form */}
-        <div className="max-w-3xl mx-auto mb-16">
+        <div className="max-w-3xl mx-auto mb-12 sm:mb-14 md:mb-16">
           <Card className="border-2 border-gray-200 shadow-xl">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                {language === "fr" ? "Demander une soumission" : "Request a Quote"}
+            <CardContent className="p-5 sm:p-6 md:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-5 sm:mb-6">
+                {language === "fr"
+                  ? "Demander une soumission"
+                  : "Request a Quote"}
               </h3>
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     {language === "fr" ? "Nom complet" : "Full Name"}
                   </label>
                   <Input
                     type="text"
-                    placeholder={language === "fr" ? "Entrez votre nom" : "Enter your name"}
+                    placeholder={
+                      language === "fr" ? "Entrez votre nom" : "Enter your name"
+                    }
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
                     required
-                    className="h-12 border-gray-300 focus:border-red-500 focus:ring-red-500"
+                    className="h-12 sm:h-13 text-base border-gray-300 focus:border-red-500 focus:ring-red-500"
                   />
                 </div>
 
@@ -109,13 +116,15 @@ export function ContactSection() {
                   </label>
                   <Input
                     type="email"
-                    placeholder={language === "fr" ? "votre@email.com" : "your@email.com"}
+                    placeholder={
+                      language === "fr" ? "votre@email.com" : "your@email.com"
+                    }
                     value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
                     required
-                    className="h-12 border-gray-300 focus:border-red-500 focus:ring-red-500"
+                    className="h-12 sm:h-13 text-base border-gray-300 focus:border-red-500 focus:ring-red-500"
                   />
                 </div>
 
@@ -135,7 +144,7 @@ export function ContactSection() {
                       setFormData({ ...formData, message: e.target.value })
                     }
                     required
-                    className="border-gray-300 focus:border-red-500 focus:ring-red-500 resize-none"
+                    className="text-base border-gray-300 focus:border-red-500 focus:ring-red-500 resize-none min-h-[120px]"
                   />
                 </div>
 
@@ -143,7 +152,7 @@ export function ContactSection() {
                   type="submit"
                   disabled={isSubmitting}
                   size="lg"
-                  className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold h-12 text-lg disabled:opacity-50"
+                  className="w-full bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-semibold h-12 sm:h-13 text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all min-h-[48px]"
                 >
                   {isSubmitting ? (
                     <>
@@ -152,13 +161,15 @@ export function ContactSection() {
                   ) : (
                     <>
                       <Send className="mr-2 h-5 w-5" />
-                      {language === "fr" ? "Envoyer la demande" : "Send Request"}
+                      {language === "fr"
+                        ? "Envoyer la demande"
+                        : "Send Request"}
                     </>
                   )}
                 </Button>
 
-                <p className="text-center text-sm text-gray-500 mt-4">
-                  {language === "fr" 
+                <p className="text-center text-xs sm:text-sm text-gray-500 mt-4 px-2">
+                  {language === "fr"
                     ? "Nous respectons votre vie privée. Vos informations sont sécurisées."
                     : "We respect your privacy. Your information is secure."}
                 </p>
@@ -167,20 +178,20 @@ export function ContactSection() {
           </Card>
         </div>
 
-        {/* Contact Info Bar - Horizontal Modern Style */}
-        <div className="mt-16">
-          <div className="grid md:grid-cols-3 gap-6">
+        {/* Contact Info Bar - Responsive Grid */}
+        <div className="mt-12 sm:mt-14 md:mt-16">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-5 md:gap-6">
             {/* Phone */}
-            <div className="text-center">
-              <div className="inline-flex h-14 w-14 rounded-full bg-red-50 items-center justify-center mb-3">
-                <Phone className="h-7 w-7 text-red-600" />
+            <div className="text-center p-4 sm:p-0">
+              <div className="inline-flex h-14 w-14 sm:h-12 sm:w-12 md:h-14 md:w-14 rounded-full bg-red-50 items-center justify-center mb-3">
+                <Phone className="h-7 w-7 sm:h-6 sm:w-6 md:h-7 md:w-7 text-red-600" />
               </div>
               <h3 className="font-semibold text-gray-900 text-sm mb-2">
                 {language === "fr" ? "Appelez-nous" : "Call Us"}
               </h3>
               <a
                 href={`tel:${SITE_CONFIG.phone}`}
-                className="text-lg font-bold text-gray-900 block mb-1"
+                className="text-lg sm:text-base md:text-lg font-bold text-gray-900 block mb-1 hover:text-red-600 transition-colors min-h-[44px] flex items-center justify-center"
               >
                 {SITE_CONFIG.phone}
               </a>
@@ -190,16 +201,16 @@ export function ContactSection() {
             </div>
 
             {/* Email */}
-            <div className="text-center">
-              <div className="inline-flex h-14 w-14 rounded-full bg-red-50 items-center justify-center mb-3">
-                <Mail className="h-7 w-7 text-red-600" />
+            <div className="text-center p-4 sm:p-0">
+              <div className="inline-flex h-14 w-14 sm:h-12 sm:w-12 md:h-14 md:w-14 rounded-full bg-red-50 items-center justify-center mb-3">
+                <Mail className="h-7 w-7 sm:h-6 sm:w-6 md:h-7 md:w-7 text-red-600" />
               </div>
               <h3 className="font-semibold text-gray-900 text-sm mb-2">
                 {language === "fr" ? "Écrivez-nous" : "Email Us"}
               </h3>
               <a
                 href={`mailto:${SITE_CONFIG.email}`}
-                className="text-base font-semibold text-gray-900 block mb-1"
+                className="text-base sm:text-sm md:text-base font-semibold text-gray-900 block mb-1 hover:text-red-600 transition-colors break-all min-h-[44px] flex items-center justify-center px-2"
               >
                 {SITE_CONFIG.email}
               </a>
@@ -209,14 +220,14 @@ export function ContactSection() {
             </div>
 
             {/* Location */}
-            <div className="text-center">
-              <div className="inline-flex h-14 w-14 rounded-full bg-red-50 items-center justify-center mb-3">
-                <MapPin className="h-7 w-7 text-red-600" />
+            <div className="text-center p-4 sm:p-0">
+              <div className="inline-flex h-14 w-14 sm:h-12 sm:w-12 md:h-14 md:w-14 rounded-full bg-red-50 items-center justify-center mb-3">
+                <MapPin className="h-7 w-7 sm:h-6 sm:w-6 md:h-7 md:w-7 text-red-600" />
               </div>
               <h3 className="font-semibold text-gray-900 text-sm mb-2">
                 {language === "fr" ? "Notre zone" : "Service Area"}
               </h3>
-              <p className="text-base font-semibold text-gray-900 mb-1">
+              <p className="text-base sm:text-sm md:text-base font-semibold text-gray-900 mb-1 min-h-[44px] flex items-center justify-center">
                 {SITE_CONFIG.location}
               </p>
               <p className="text-xs text-gray-500">
