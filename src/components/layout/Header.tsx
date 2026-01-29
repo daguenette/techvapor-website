@@ -51,7 +51,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-md">
       {/* Top Bar */}
-      <div className="bg-black text-white py-2.5 sm:py-2">
+      <div className="bg-red-600 text-white py-2.5 sm:py-2">
         <div className="w-full px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm">
           <div className="flex items-center gap-2 sm:gap-4">
             <Phone className="h-4 w-4 flex-shrink-0" />

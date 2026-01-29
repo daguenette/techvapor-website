@@ -28,7 +28,7 @@ export function HeroSection() {
         {/* Image Container */}
         <div className="relative aspect-[16/9] sm:aspect-[2/1]">
           <Image
-            src="/497422573_10228264055646451_6047764831532838610_n.jpg"
+            src="/Truck_02.jpg"
             alt="Technivapeur Cleaning Service"
             fill
             className="object-cover"
@@ -67,7 +67,7 @@ export function HeroSection() {
         {/* Background Image - Right Side */}
         <div className="absolute inset-0 left-[45%]">
           <Image
-            src="/497422573_10228264055646451_6047764831532838610_n.jpg"
+            src="/Truck_02.jpg"
             alt="Technivapeur Cleaning Service"
             fill
             className="object-cover"

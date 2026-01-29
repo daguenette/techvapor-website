@@ -9,12 +9,12 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SERVICES } from "@/lib/constants/site-content";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
-import { Sparkles, Wind, Sofa, DoorOpen, Send } from "lucide-react";
+import { Flame, Droplets, Shield, Wind, Sparkles, Send } from "lucide-react";
 import { ImageCarousel } from "@/components/ui/ImageCarousel";
 
-export default function ResidentialCleaningPage() {
+export default function PostDisasterCleaningPage() {
   const { t, language } = useLanguage();
-  const service = SERVICES.find((s) => s.id === "residential");
+  const service = SERVICES.find((s) => s.id === "post-disaster");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,19 +24,11 @@ export default function ResidentialCleaningPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic here
     console.log("Form submitted:", formData);
   };
 
   const carouselImages = [
-    { src: "/Residential_01.jpg", alt: language === "fr" ? "Nettoyage résidentiel" : "Residential cleaning" },
-    { src: "/Residential_02.webp", alt: language === "fr" ? "Nettoyage de maison" : "Home cleaning" },
-    { src: "/Residential_03.webp", alt: language === "fr" ? "Nettoyage de tapis" : "Carpet cleaning" },
-    { src: "/Residential_04.webp", alt: language === "fr" ? "Nettoyage professionnel" : "Professional cleaning" },
-    { src: "/Residential_05.webp", alt: language === "fr" ? "Service résidentiel" : "Residential service" },
-    { src: "/Residential_06.webp", alt: language === "fr" ? "Entretien ménager" : "House maintenance" },
-    { src: "/Residential_07.webp", alt: language === "fr" ? "Nettoyage à domicile" : "Home cleaning service" },
-    { src: "/Residential_08.webp", alt: language === "fr" ? "Services de nettoyage" : "Cleaning services" },
+    { src: "/Disaster_01.webp", alt: language === "fr" ? "Nettoyage après sinistre" : "Post disaster cleaning" },
   ];
 
   if (!service) return null;
@@ -64,8 +56,8 @@ export default function ResidentialCleaningPage() {
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-6 sm:mb-7 md:mb-8">
                   {language === "fr"
-                    ? "Après une longue journée de travail, vous méritez de rentrer dans un espace frais et impeccable. Profitez de notre service de nettoyage professionnel hebdomadaire, bihebdomadaire ou mensuel."
-                    : "After a long day at work, you deserve to come home to a fresh, spotless space. Enjoy our professional weekly, bi-weekly, or monthly cleaning service."}
+                    ? "Nous vous aidons à retrouver votre espace après un sinistre. Notre équipe expérimentée intervient rapidement pour nettoyer et restaurer votre propriété."
+                    : "We help you recover your space after a disaster. Our experienced team responds quickly to clean and restore your property."}
                 </p>
                 <div>
                   <a href="#service-inquiry">
@@ -90,13 +82,13 @@ export default function ResidentialCleaningPage() {
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6">
                 {language === "fr"
-                  ? "Service de nettoyage résidentiel"
-                  : "Residential Cleaning Service"}
+                  ? "Service de nettoyage post-sinistre"
+                  : "Post Disaster Cleaning Service"}
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
                 {language === "fr"
-                  ? "Profitez d'une maison impeccable avec notre service de nettoyage résidentiel. Notre équipe d'experts s'assure que votre espace reste frais avec des tâches essentielles personnalisées selon vos besoins uniques."
-                  : "Enjoy a spotless home with our residential cleaning service. Our expert team ensures your space stays fresh with essential tasks customized to your unique needs."}
+                  ? "Après un incendie, une inondation ou tout autre sinistre, notre équipe spécialisée intervient pour nettoyer, désinfecter et restaurer votre propriété."
+                  : "After a fire, flood, or any other disaster, our specialized team intervenes to clean, disinfect, and restore your property."}
               </p>
             </div>
 
@@ -104,15 +96,43 @@ export default function ResidentialCleaningPage() {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-7 md:gap-8 mb-12">
               <div className="text-center">
                 <div className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 mx-auto mb-4 sm:mb-5 md:mb-6 rounded-full bg-black flex items-center justify-center">
-                  <Sparkles
+                  <Droplets
                     className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-white"
                     strokeWidth={2}
                   />
                 </div>
                 <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
                   {language === "fr"
-                    ? "Nettoyage en profondeur des salles de bain et cuisines"
-                    : "Thorough cleaning of your bathroom and kitchen"}
+                    ? "Dégâts d'eau et inondations"
+                    : "Water damage & floods"}
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 mx-auto mb-4 sm:mb-5 md:mb-6 rounded-full bg-black flex items-center justify-center">
+                  <Flame
+                    className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-white"
+                    strokeWidth={2}
+                  />
+                </div>
+                <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
+                  {language === "fr"
+                    ? "Nettoyage après incendie"
+                    : "Fire damage cleanup"}
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 mx-auto mb-4 sm:mb-5 md:mb-6 rounded-full bg-black flex items-center justify-center">
+                  <Shield
+                    className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-white"
+                    strokeWidth={2}
+                  />
+                </div>
+                <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
+                  {language === "fr"
+                    ? "Élimination des moisissures"
+                    : "Mold removal"}
                 </p>
               </div>
 
@@ -125,26 +145,12 @@ export default function ResidentialCleaningPage() {
                 </div>
                 <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
                   {language === "fr"
-                    ? "Aspiration complète de chaque pièce"
-                    : "Complete vacuuming of every room"}
+                    ? "Élimination des odeurs"
+                    : "Odor elimination"}
                 </p>
               </div>
 
-              <div className="text-center">
-                <div className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 mx-auto mb-4 sm:mb-5 md:mb-6 rounded-full bg-black flex items-center justify-center">
-                  <Sofa
-                    className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-white"
-                    strokeWidth={2}
-                  />
-                </div>
-                <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
-                  {language === "fr"
-                    ? "Lavage de tous les planchers"
-                    : "Washing all non-carpeted floors"}
-                </p>
-              </div>
-
-              <div className="text-center">
+              <div className="text-center col-span-2 sm:col-span-1">
                 <div className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 mx-auto mb-4 sm:mb-5 md:mb-6 rounded-full bg-black flex items-center justify-center">
                   <Sparkles
                     className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-white"
@@ -153,22 +159,8 @@ export default function ResidentialCleaningPage() {
                 </div>
                 <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
                   {language === "fr"
-                    ? "Dépoussiérage des surfaces et luminaires"
-                    : "Dusting surfaces and fixtures"}
-                </p>
-              </div>
-
-              <div className="text-center col-span-2 sm:col-span-1">
-                <div className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 mx-auto mb-4 sm:mb-5 md:mb-6 rounded-full bg-black flex items-center justify-center">
-                  <DoorOpen
-                    className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-white"
-                    strokeWidth={2}
-                  />
-                </div>
-                <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
-                  {language === "fr"
-                    ? "Nettoyage des vitres intérieures (sur demande)"
-                    : "Interior window cleaning (upon request)"}
+                    ? "Restauration complète"
+                    : "Complete restoration"}
                 </p>
               </div>
             </div>
@@ -186,18 +178,18 @@ export default function ResidentialCleaningPage() {
             <div className="text-center">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6">
                 {language === "fr"
-                  ? "Nettoyage résidentiel selon votre horaire"
-                  : "Residential Cleaning on Your Schedule"}
+                  ? "Intervention rapide après sinistre"
+                  : "Rapid Post-Disaster Response"}
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-4 sm:mb-5 md:mb-6">
                 {language === "fr"
-                  ? "Après une journée bien remplie au travail ou à prendre soin de votre famille, la dernière chose dont vous voulez vous soucier est de nettoyer votre maison. Laissez Technivapeur s'occuper du travail pour vous!"
-                  : "After a busy day at work or taking care of your family, the last thing you want to worry about is cleaning your home. Let Technivapeur take care of the dirty work for you!"}
+                  ? "Un sinistre peut survenir à tout moment. Notre équipe est prête à intervenir rapidement pour minimiser les dommages et commencer le processus de restauration."
+                  : "A disaster can strike at any time. Our team is ready to respond quickly to minimize damage and begin the restoration process."}
               </p>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-7 md:mb-8">
                 {language === "fr"
-                  ? "Que vous préfériez un nettoyage hebdomadaire, bihebdomadaire ou mensuel, nous avons ce qu'il vous faut. Imaginez entrer dans votre salle de bain étincelante ou votre cuisine bien rangée sans avoir à lever le petit doigt."
-                  : "Whether you prefer weekly, bi-weekly or monthly cleaning service, we have you covered. Imagine walking into your sparkling clean bathroom or your tidy and shining kitchen without you having to lift a finger."}
+                  ? "Nous travaillons avec les compagnies d'assurance et vous accompagnons tout au long du processus. Faites confiance à notre expertise pour retrouver votre espace."
+                  : "We work with insurance companies and guide you through the entire process. Trust our expertise to help you recover your space."}
               </p>
               <a href="#service-inquiry">
                 <Button
@@ -206,7 +198,7 @@ export default function ResidentialCleaningPage() {
                 >
                   {language === "fr"
                     ? "Demander une estimation gratuite"
-                    : "Request Your Free In-Home Estimate"}
+                    : "Request Your Free Estimate"}
                 </Button>
               </a>
             </div>
@@ -298,8 +290,8 @@ export default function ResidentialCleaningPage() {
                     <Textarea
                       placeholder={
                         language === "fr"
-                          ? "Décrivez vos besoins de nettoyage..."
-                          : "Describe your cleaning needs..."
+                          ? "Décrivez votre situation..."
+                          : "Describe your situation..."
                       }
                       rows={5}
                       value={formData.message}

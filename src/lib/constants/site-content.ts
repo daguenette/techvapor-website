@@ -25,13 +25,13 @@ export const NAVIGATION_ITEMS: LocalizedContent<NavigationItem[]> = {
   fr: [
     { name: "Accueil", href: "#home" },
     { name: "Nos services", href: "#services" },
-    { name: "À propos", href: "#about" },
+    { name: "À propos", href: "about" },
     { name: "Contact", href: "#contact" },
   ],
   en: [
     { name: "Home", href: "#home" },
     { name: "Services", href: "#services" },
-    { name: "About", href: "#about" },
+    { name: "About", href: "about" },
     { name: "Contact", href: "#contact" },
   ],
 };
@@ -182,36 +182,52 @@ export const SERVICES = [
     image: "2-commercial.webp",
   },
   {
-    id: "furniture",
+    id: "post-disaster",
     title: {
-      fr: "Nettoyage des Meubles",
-      en: "Furniture Cleaning",
+      fr: "Après-Sinistre",
+      en: "Post Disaster",
     },
     description: {
-      fr: "Nettoyage professionnel de vos meubles rembourrés, canapés et chaises.",
-      en: "Professional cleaning of your upholstered furniture, sofas and chairs.",
+      fr: "Nettoyage et restauration après sinistre. Nous vous aidons à retrouver votre espace après un incendie, une inondation ou tout autre désastre.",
+      en: "Post-disaster cleaning and restoration. We help you recover your space after fire, flood, or any other disaster.",
     },
     features: {
-      fr: ["Canapés", "Fauteuils", "Chaises", "Tissus d'ameublement"],
-      en: ["Sofas", "Armchairs", "Chairs", "Upholstery"],
-    },
-    image: "469648923_122174149208108452_263683896868960210_n.jpg",
-  },
-  {
-    id: "ducts",
-    title: {
-      fr: "Nettoyage de Conduits",
-      en: "Duct Cleaning",
-    },
-    description: {
-      fr: "Nettoyage complet de vos conduits de ventilation pour un air plus sain.",
-      en: "Complete cleaning of your ventilation ducts for healthier air.",
-    },
-    features: {
-      fr: ["Conduits d'air", "Ventilation", "Qualité d'air", "Système HVAC"],
-      en: ["Air ducts", "Ventilation", "Air quality", "HVAC system"],
+      fr: ["Dégâts d'eau", "Après incendie", "Moisissures", "Restauration"],
+      en: ["Water damage", "Fire damage", "Mold", "Restoration"],
     },
     image: null,
+  },
+  {
+    id: "boat-trailer",
+    title: {
+      fr: "Nettoyage Bateau & Roulotte",
+      en: "Boat & Trailer Cleaning",
+    },
+    description: {
+      fr: "Nettoyage professionnel pour bateaux, roulottes et véhicules récréatifs. Redonnez de l'éclat à vos équipements.",
+      en: "Professional cleaning for boats, trailers, and recreational vehicles. Restore the shine to your equipment.",
+    },
+    features: {
+      fr: ["Bateaux", "Roulottes", "VR", "Intérieur & Extérieur"],
+      en: ["Boats", "Trailers", "RVs", "Interior & Exterior"],
+    },
+    image: null,
+  },
+  {
+    id: "carpet-furniture",
+    title: {
+      fr: "Nettoyage Tapis & Meubles",
+      en: "Carpet & Furniture Cleaning",
+    },
+    description: {
+      fr: "Nettoyage professionnel de vos tapis et meubles rembourrés. Éliminez les taches, odeurs et allergènes.",
+      en: "Professional cleaning of your carpets and upholstered furniture. Remove stains, odors, and allergens.",
+    },
+    features: {
+      fr: ["Tapis", "Canapés", "Fauteuils", "Tissus d'ameublement"],
+      en: ["Carpets", "Sofas", "Armchairs", "Upholstery"],
+    },
+    image: "469648923_122174149208108452_263683896868960210_n.jpg",
   },
 ];
 

@@ -9,7 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SERVICES } from "@/lib/constants/site-content";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
 import { Building2, Sparkles, Wind, Sofa, DoorOpen, Send } from "lucide-react";
-import Image from "next/image";
+import { ImageCarousel } from "@/components/ui/ImageCarousel";
 
 export default function CommercialCleaningPage() {
   const { t, language } = useLanguage();
@@ -18,6 +18,14 @@ export default function CommercialCleaningPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
   };
+
+  const carouselImages = [
+    { src: "/Commercial_01.webp", alt: language === "fr" ? "Nettoyage commercial" : "Commercial cleaning" },
+    { src: "/Commercial_02.webp", alt: language === "fr" ? "Nettoyage de bureaux" : "Office cleaning" },
+    { src: "/Commercial_03.webp", alt: language === "fr" ? "Nettoyage d'édifices" : "Building cleaning" },
+    { src: "/Commercial_04.webp", alt: language === "fr" ? "Entretien commercial" : "Commercial maintenance" },
+    { src: "/Commercial_05.webp", alt: language === "fr" ? "Services commerciaux" : "Commercial services" },
+  ];
 
   if (!service) return null;
 
@@ -50,22 +58,10 @@ export default function CommercialCleaningPage() {
               </div>
             </div>
             <div className="relative">
-              {service.image ? (
-                <div className="aspect-square rounded-3xl overflow-hidden">
-                  <Image
-                    src={`/${service.image}`}
-                    alt={t(service.title)}
-                    width={600}
-                    height={600}
-                    className="object-cover w-full h-full"
-                    unoptimized
-                  />
-                </div>
-              ) : (
-                <div className="aspect-square bg-gray-800 rounded-3xl flex items-center justify-center">
-                  <Building2 className="h-48 w-48 text-gray-600" strokeWidth={1.5} />
-                </div>
-              )}
+              <ImageCarousel
+                images={carouselImages}
+                className="aspect-square rounded-3xl"
+              />
             </div>
           </div>
         </div>
@@ -145,49 +141,39 @@ export default function CommercialCleaningPage() {
         </div>
       </section>
 
-      {/* Scheduling Section with Image */}
+      {/* Scheduling Section */}
       <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-10">
           <div className="absolute top-1/4 right-0 w-96 h-96 bg-red-600 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="container mx-auto max-w-7xl px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <div className="aspect-square bg-black rounded-3xl flex items-center justify-center">
-                <Building2 className="h-48 w-48 text-red-600/40" strokeWidth={1.5} />
-              </div>
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-red-500 rounded-full"></div>
-              <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-black rounded-full"></div>
-            </div>
-
-            <div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        <div className="container mx-auto max-w-4xl px-4 relative z-10">
+          <div className="text-center">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              {language === "fr"
+                ? "Nettoyage commercial selon votre horaire"
+                : "Commercial Cleaning on Your Schedule"}
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed mb-6">
+              {language === "fr"
+                ? "Nous comprenons que votre entreprise fonctionne selon un horaire unique. C'est pourquoi nous offrons des services de nettoyage en soirée et en fin de semaine pour minimiser l'interruption de vos activités quotidiennes."
+                : "We understand your business operates on a unique schedule. That's why we offer evening and weekend cleaning services to minimize disruption to your daily operations."}
+            </p>
+            <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              {language === "fr"
+                ? "Notre équipe professionnelle arrive en uniforme, entièrement assurée et équipée de tout le nécessaire. Nous créons un plan de nettoyage personnalisé qui correspond parfaitement à vos besoins et à votre budget."
+                : "Our professional team arrives in uniform, fully insured and equipped with everything needed. We create a customized cleaning plan that perfectly fits your needs and budget."}
+            </p>
+            <a href="#service-inquiry">
+              <Button
+                size="lg"
+                className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-6 text-lg"
+              >
                 {language === "fr"
-                  ? "Nettoyage commercial selon votre horaire"
-                  : "Commercial Cleaning on Your Schedule"}
-              </h2>
-              <p className="text-xl text-gray-600 leading-relaxed mb-6">
-                {language === "fr"
-                  ? "Nous comprenons que votre entreprise fonctionne selon un horaire unique. C'est pourquoi nous offrons des services de nettoyage en soirée et en fin de semaine pour minimiser l'interruption de vos activités quotidiennes."
-                  : "We understand your business operates on a unique schedule. That's why we offer evening and weekend cleaning services to minimize disruption to your daily operations."}
-              </p>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                {language === "fr"
-                  ? "Notre équipe professionnelle arrive en uniforme, entièrement assurée et équipée de tout le nécessaire. Nous créons un plan de nettoyage personnalisé qui correspond parfaitement à vos besoins et à votre budget."
-                  : "Our professional team arrives in uniform, fully insured and equipped with everything needed. We create a customized cleaning plan that perfectly fits your needs and budget."}
-              </p>
-              <a href="#service-inquiry">
-                <Button
-                  size="lg"
-                  className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-6 text-lg"
-                >
-                  {language === "fr"
-                    ? "Demander une estimation gratuite"
-                    : "Request Your Free Estimate"}
-                </Button>
-              </a>
-            </div>
+                  ? "Demander une estimation gratuite"
+                  : "Request Your Free Estimate"}
+              </Button>
+            </a>
           </div>
         </div>
       </section>

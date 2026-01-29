@@ -9,12 +9,12 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SERVICES } from "@/lib/constants/site-content";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
-import { Sparkles, Wind, Sofa, DoorOpen, Send } from "lucide-react";
+import { Ship, Caravan, Sparkles, Droplets, Shield, Send } from "lucide-react";
 import { ImageCarousel } from "@/components/ui/ImageCarousel";
 
-export default function ResidentialCleaningPage() {
+export default function BoatTrailerCleaningPage() {
   const { t, language } = useLanguage();
-  const service = SERVICES.find((s) => s.id === "residential");
+  const service = SERVICES.find((s) => s.id === "boat-trailer");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,19 +24,12 @@ export default function ResidentialCleaningPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic here
     console.log("Form submitted:", formData);
   };
 
   const carouselImages = [
-    { src: "/Residential_01.jpg", alt: language === "fr" ? "Nettoyage résidentiel" : "Residential cleaning" },
-    { src: "/Residential_02.webp", alt: language === "fr" ? "Nettoyage de maison" : "Home cleaning" },
-    { src: "/Residential_03.webp", alt: language === "fr" ? "Nettoyage de tapis" : "Carpet cleaning" },
-    { src: "/Residential_04.webp", alt: language === "fr" ? "Nettoyage professionnel" : "Professional cleaning" },
-    { src: "/Residential_05.webp", alt: language === "fr" ? "Service résidentiel" : "Residential service" },
-    { src: "/Residential_06.webp", alt: language === "fr" ? "Entretien ménager" : "House maintenance" },
-    { src: "/Residential_07.webp", alt: language === "fr" ? "Nettoyage à domicile" : "Home cleaning service" },
-    { src: "/Residential_08.webp", alt: language === "fr" ? "Services de nettoyage" : "Cleaning services" },
+    { src: "/Boat_01.webp", alt: language === "fr" ? "Nettoyage de bateau" : "Boat cleaning" },
+    { src: "/Boat_02.jpg", alt: language === "fr" ? "Nettoyage de roulotte" : "Trailer cleaning" },
   ];
 
   if (!service) return null;
@@ -64,8 +57,8 @@ export default function ResidentialCleaningPage() {
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-6 sm:mb-7 md:mb-8">
                   {language === "fr"
-                    ? "Après une longue journée de travail, vous méritez de rentrer dans un espace frais et impeccable. Profitez de notre service de nettoyage professionnel hebdomadaire, bihebdomadaire ou mensuel."
-                    : "After a long day at work, you deserve to come home to a fresh, spotless space. Enjoy our professional weekly, bi-weekly, or monthly cleaning service."}
+                    ? "Redonnez de l'éclat à votre bateau ou roulotte avec notre service de nettoyage professionnel. Intérieur et extérieur impeccables."
+                    : "Restore the shine to your boat or trailer with our professional cleaning service. Impeccable interior and exterior."}
                 </p>
                 <div>
                   <a href="#service-inquiry">
@@ -90,13 +83,13 @@ export default function ResidentialCleaningPage() {
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6">
                 {language === "fr"
-                  ? "Service de nettoyage résidentiel"
-                  : "Residential Cleaning Service"}
+                  ? "Service de nettoyage bateau et roulotte"
+                  : "Boat & Trailer Cleaning Service"}
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
                 {language === "fr"
-                  ? "Profitez d'une maison impeccable avec notre service de nettoyage résidentiel. Notre équipe d'experts s'assure que votre espace reste frais avec des tâches essentielles personnalisées selon vos besoins uniques."
-                  : "Enjoy a spotless home with our residential cleaning service. Our expert team ensures your space stays fresh with essential tasks customized to your unique needs."}
+                  ? "Notre équipe spécialisée nettoie en profondeur votre bateau, roulotte ou véhicule récréatif. De l'intérieur à l'extérieur, nous prenons soin de chaque détail."
+                  : "Our specialized team deep cleans your boat, trailer, or recreational vehicle. From interior to exterior, we take care of every detail."}
               </p>
             </div>
 
@@ -104,43 +97,29 @@ export default function ResidentialCleaningPage() {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-7 md:gap-8 mb-12">
               <div className="text-center">
                 <div className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 mx-auto mb-4 sm:mb-5 md:mb-6 rounded-full bg-black flex items-center justify-center">
-                  <Sparkles
+                  <Ship
                     className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-white"
                     strokeWidth={2}
                   />
                 </div>
                 <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
                   {language === "fr"
-                    ? "Nettoyage en profondeur des salles de bain et cuisines"
-                    : "Thorough cleaning of your bathroom and kitchen"}
+                    ? "Nettoyage de bateaux"
+                    : "Boat cleaning"}
                 </p>
               </div>
 
               <div className="text-center">
                 <div className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 mx-auto mb-4 sm:mb-5 md:mb-6 rounded-full bg-black flex items-center justify-center">
-                  <Wind
+                  <Caravan
                     className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-white"
                     strokeWidth={2}
                   />
                 </div>
                 <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
                   {language === "fr"
-                    ? "Aspiration complète de chaque pièce"
-                    : "Complete vacuuming of every room"}
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 mx-auto mb-4 sm:mb-5 md:mb-6 rounded-full bg-black flex items-center justify-center">
-                  <Sofa
-                    className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-white"
-                    strokeWidth={2}
-                  />
-                </div>
-                <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
-                  {language === "fr"
-                    ? "Lavage de tous les planchers"
-                    : "Washing all non-carpeted floors"}
+                    ? "Nettoyage de roulottes et VR"
+                    : "Trailer & RV cleaning"}
                 </p>
               </div>
 
@@ -153,22 +132,36 @@ export default function ResidentialCleaningPage() {
                 </div>
                 <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
                   {language === "fr"
-                    ? "Dépoussiérage des surfaces et luminaires"
-                    : "Dusting surfaces and fixtures"}
+                    ? "Nettoyage intérieur complet"
+                    : "Complete interior cleaning"}
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 mx-auto mb-4 sm:mb-5 md:mb-6 rounded-full bg-black flex items-center justify-center">
+                  <Droplets
+                    className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-white"
+                    strokeWidth={2}
+                  />
+                </div>
+                <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
+                  {language === "fr"
+                    ? "Lavage extérieur à la vapeur"
+                    : "Steam exterior wash"}
                 </p>
               </div>
 
               <div className="text-center col-span-2 sm:col-span-1">
                 <div className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 mx-auto mb-4 sm:mb-5 md:mb-6 rounded-full bg-black flex items-center justify-center">
-                  <DoorOpen
+                  <Shield
                     className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-white"
                     strokeWidth={2}
                   />
                 </div>
                 <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
                   {language === "fr"
-                    ? "Nettoyage des vitres intérieures (sur demande)"
-                    : "Interior window cleaning (upon request)"}
+                    ? "Protection des surfaces"
+                    : "Surface protection"}
                 </p>
               </div>
             </div>
@@ -186,18 +179,18 @@ export default function ResidentialCleaningPage() {
             <div className="text-center">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6">
                 {language === "fr"
-                  ? "Nettoyage résidentiel selon votre horaire"
-                  : "Residential Cleaning on Your Schedule"}
+                  ? "Nettoyage bateau et roulotte selon votre horaire"
+                  : "Boat & Trailer Cleaning on Your Schedule"}
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-4 sm:mb-5 md:mb-6">
                 {language === "fr"
-                  ? "Après une journée bien remplie au travail ou à prendre soin de votre famille, la dernière chose dont vous voulez vous soucier est de nettoyer votre maison. Laissez Technivapeur s'occuper du travail pour vous!"
-                  : "After a busy day at work or taking care of your family, the last thing you want to worry about is cleaning your home. Let Technivapeur take care of the dirty work for you!"}
+                  ? "Que ce soit pour préparer votre bateau pour la saison ou pour rafraîchir votre roulotte après un voyage, notre équipe est là pour vous."
+                  : "Whether you're preparing your boat for the season or refreshing your trailer after a trip, our team is here for you."}
               </p>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-7 md:mb-8">
                 {language === "fr"
-                  ? "Que vous préfériez un nettoyage hebdomadaire, bihebdomadaire ou mensuel, nous avons ce qu'il vous faut. Imaginez entrer dans votre salle de bain étincelante ou votre cuisine bien rangée sans avoir à lever le petit doigt."
-                  : "Whether you prefer weekly, bi-weekly or monthly cleaning service, we have you covered. Imagine walking into your sparkling clean bathroom or your tidy and shining kitchen without you having to lift a finger."}
+                  ? "Nous nous déplaçons chez vous ou à votre marina. Profitez d'un équipement récréatif propre et prêt pour votre prochaine aventure."
+                  : "We come to you or your marina. Enjoy clean recreational equipment ready for your next adventure."}
               </p>
               <a href="#service-inquiry">
                 <Button
@@ -206,7 +199,7 @@ export default function ResidentialCleaningPage() {
                 >
                   {language === "fr"
                     ? "Demander une estimation gratuite"
-                    : "Request Your Free In-Home Estimate"}
+                    : "Request Your Free Estimate"}
                 </Button>
               </a>
             </div>
