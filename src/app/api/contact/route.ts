@@ -5,7 +5,7 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY;
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, message, language } = body;
+    const { name, email, message, language, phone } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -23,11 +23,14 @@ export async function POST(request: NextRequest) {
       <h2>${language === "fr" ? "Nouveau message de contact" : "New Contact Message"}</h2>
       <p><strong>${language === "fr" ? "Nom" : "Name"}:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
+      ${phone ? `<p><strong>${language === "fr" ? "Téléphone" : "Phone"}:</strong> ${phone}</p>` : ""}
       <p><strong>Message:</strong></p>
       <p>${message.replace(/\n/g, "<br>")}</p>
     `;
 
-    // TODO: Update 'from' and 'to' email addresses for TechVapor
+    // Testing configuration:
+    // - Use Resend's onboarding sender to avoid domain verification issues.
+    // - Deliver to D-A's address while we validate the flow.
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -35,8 +38,8 @@ export async function POST(request: NextRequest) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "website@contact.techvapor.com", // TODO: Update with actual domain
-        to: ["team@techvapor.com"], // TODO: Update with actual email
+        from: "Technivapeur <onboarding@resend.dev>",
+        to: ["daguenette.data@gmail.com"],
         subject,
         html: htmlContent,
         reply_to: email,
