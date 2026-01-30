@@ -14,6 +14,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    if (!RESEND_API_KEY) {
+      // This will happen on Vercel until RESEND_API_KEY is configured in project env vars.
+      return NextResponse.json(
+        { error: "Email is not configured (missing RESEND_API_KEY)" },
+        { status: 500 },
+      );
+    }
+
     const subject =
       language === "fr"
         ? `Nouveau message de contact de ${name}`
@@ -49,6 +57,10 @@ export async function POST(request: NextRequest) {
     const data = await response.json();
 
     if (!response.ok) {
+      console.error("Resend API error:", {
+        status: response.status,
+        data,
+      });
       throw new Error(`Resend API error: ${response.status}`);
     }
 
