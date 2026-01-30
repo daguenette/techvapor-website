@@ -5,65 +5,32 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { ToastContainer } from "@/components/ui/toast";
 import { CONTACT_CONTENT, SITE_CONFIG } from "@/lib/constants/site-content";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
-import { useToast } from "@/lib/hooks/useToast";
 import { Send, Phone, Mail, MapPin } from "lucide-react";
 
 export function ContactSection() {
   const { t, language } = useLanguage();
-  const { toasts, success, error, removeToast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          language,
-        }),
-      });
+    const subject = encodeURIComponent("Technivapeur - Quote Request");
+    const body = encodeURIComponent(
+      `${language === "fr" ? "Nom" : "Name"}: ${formData.name}\n` +
+      `${language === "fr" ? "Courriel" : "Email"}: ${formData.email}\n` +
+      `${language === "fr" ? "Téléphone" : "Phone"}: ${formData.phone}\n` +
+      `${language === "fr" ? "Langue" : "Language"}: ${language === "fr" ? "Français" : "English"}\n\n` +
+      `${language === "fr" ? "Message" : "Message"}:\n${formData.message}`
+    );
 
-      if (response.ok) {
-        const successTitle =
-          language === "fr" ? "Message envoyé !" : "Message sent!";
-        const successMessage =
-          language === "fr"
-            ? "Nous vous contacterons bientôt."
-            : "We'll get back to you soon.";
-        success(successTitle, successMessage);
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        const errorTitle = language === "fr" ? "Erreur d'envoi" : "Send Error";
-        const errorMessage =
-          language === "fr"
-            ? "Vérifiez votre connexion et réessayez."
-            : "Check your connection and try again.";
-        error(errorTitle, errorMessage);
-      }
-    } catch {
-      const errorTitle = language === "fr" ? "Erreur d'envoi" : "Send Error";
-      const errorMessage =
-        language === "fr"
-          ? "Vérifiez votre connexion et réessayez."
-          : "Check your connection and try again.";
-      error(errorTitle, errorMessage);
-    } finally {
-      setIsSubmitting(false);
-    }
+    window.location.href = `mailto:daguenette.data@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -130,6 +97,24 @@ export function ContactSection() {
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    {language === "fr" ? "Téléphone" : "Phone"}
+                  </label>
+                  <Input
+                    type="tel"
+                    placeholder={
+                      language === "fr" ? "(514) 123-4567" : "(514) 123-4567"
+                    }
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
+                    required
+                    className="h-12 sm:h-13 text-base border-gray-300 focus:border-red-500 focus:ring-red-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
                     {language === "fr" ? "Votre message" : "Your Message"}
                   </label>
                   <Textarea
@@ -150,22 +135,11 @@ export function ContactSection() {
 
                 <Button
                   type="submit"
-                  disabled={isSubmitting}
                   size="lg"
-                  className="w-full bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-semibold h-12 sm:h-13 text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all min-h-[48px]"
+                  className="w-full bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-semibold h-12 sm:h-13 text-base sm:text-lg transition-all min-h-[48px]"
                 >
-                  {isSubmitting ? (
-                    <>
-                      {language === "fr" ? "Envoi en cours..." : "Sending..."}
-                    </>
-                  ) : (
-                    <>
-                      <Send className="mr-2 h-5 w-5" />
-                      {language === "fr"
-                        ? "Envoyer la demande"
-                        : "Send Request"}
-                    </>
-                  )}
+                  <Send className="mr-2 h-5 w-5" />
+                  {language === "fr" ? "Envoyer la demande" : "Send Request"}
                 </Button>
 
                 <p className="text-center text-xs sm:text-sm text-gray-500 mt-4 px-2">
@@ -238,8 +212,6 @@ export function ContactSection() {
         </div>
       </div>
 
-      {/* Toast Notifications */}
-      <ToastContainer toasts={toasts} onRemove={removeToast} />
     </section>
   );
 }
