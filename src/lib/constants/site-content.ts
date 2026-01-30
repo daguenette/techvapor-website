@@ -5,19 +5,26 @@ import { NavigationItem, LocalizedContent } from "@/types";
 export const SITE_CONFIG = {
   name: "Technivapeur",
   description: {
-    fr: "Services de nettoyage à la vapeur professionnel pour votre maison et votre entreprise",
-    en: "Professional steam cleaning services for your home and business",
+    fr: "Service professionnel de nettoyage de tapis à Montréal depuis 1996. Nettoyage à la vapeur pour tapis, meubles, matelas et après sinistre.",
+    en: "Professional carpet steam cleaning in Montreal since 1996. Steam cleaning for carpets, furniture, mattresses, and post-disaster cleanup.",
   },
   tagline: {
-    fr: "Un espace propre, un esprit serein",
-    en: "A Clean Space, A Clear Mind",
+    fr: "Nettoyage de tapis à Montréal depuis 1996",
+    en: "Carpet Cleaning in Montreal Since 1996",
   },
   ctaText: {
     fr: "Demander une soumission",
     en: "Get a Free Quote",
   },
-  location: "Greater Toronto Area",
-  phone: "1-855-TECHVAP",
+  location: {
+    fr: "Montréal, Laval, Repentigny, Longueuil, Rive-Nord, Saint-Eustache, Saint-Jérôme, Terrebonne, Mascouche et environs",
+    en: "Montreal, Laval, Repentigny, Longueuil, North Shore, Saint-Eustache, Saint-Jérôme, Terrebonne, Mascouche and surrounding areas", // TODO: Verify EN translation
+  },
+  phones: {
+    montreal: "514-895-2027",
+    riveNord: "450-492-1515",
+  },
+  phone: "514-895-2027", // Primary phone for backward compatibility
   email: "info@technivapeur.com",
 } as const;
 
@@ -38,16 +45,16 @@ export const NAVIGATION_ITEMS: LocalizedContent<NavigationItem[]> = {
 
 export const HERO_CONTENT = {
   title: {
-    fr: "Services de Nettoyage Professionnel",
-    en: "Professional Cleaning Services",
+    fr: "Service Professionnel de Nettoyage de Tapis à Montréal Depuis 1996",
+    en: "Professional Carpet Cleaning in Montreal Since 1996",
   },
   subtitle: {
-    fr: "Nous offrons des services de nettoyage de qualité supérieure pour votre maison et votre entreprise",
-    en: "We provide premium quality cleaning services for your home and business",
+    fr: "Besoin d'un nettoyage de tapis résidentiel ou commercial à Montréal? Technivapeur offre un service professionnel de nettoyage à la vapeur pour tapis, meubles, matelas et nettoyage après sinistre. Urgence disponible 24/7.",
+    en: "Need residential or commercial carpet cleaning in Montreal? Technivapeur provides professional steam cleaning for carpets, furniture, mattresses, and post-disaster cleanup. 24/7 emergency service available.",
   },
   description: {
-    fr: "Des professionnels formés et assurés • Satisfaction garantie à 100% • Produits écologiques",
-    en: "Trained & Insured Professionals • 100% Satisfaction Guaranteed • Eco-Friendly Products",
+    fr: "Montréal: 514-895-2027 | Rive-Nord: 450-492-1515",
+    en: "Montreal: 514-895-2027 | North Shore: 450-492-1515",
   },
   cta: {
     fr: "Demander une soumission gratuite",
@@ -139,12 +146,12 @@ export const PROCESS_STEPS = [
 
 export const SERVICES_CONTENT = {
   title: {
-    fr: "Nos Services de Nettoyage",
-    en: "Our Cleaning Services",
+    fr: "Nos Services de Nettoyage à Montréal",
+    en: "Our Cleaning Services in Montreal",
   },
   subtitle: {
     fr: "Des solutions professionnelles adaptées à tous vos besoins",
-    en: "Professional solutions tailored to all your needs",
+    en: "Professional solutions tailored to your needs",
   },
 };
 
@@ -156,12 +163,12 @@ export const SERVICES = [
       en: "Residential Cleaning",
     },
     description: {
-      fr: "Service de nettoyage régulier ou ponctuel pour votre maison. Nous prenons soin de chaque détail.",
-      en: "Regular or one-time cleaning service for your home. We take care of every detail.",
+      fr: "Nettoyage en profondeur de vos tapis, carpettes, meubles rembourrés et matelas. Séchage rapide, sans résidus, sans odeurs. Idéal pour les allergies et pour rafraîchir votre maison.",
+      en: "Deep cleaning for carpets, area rugs, upholstered furniture, and mattresses. Fast drying, no residue, no odors—ideal for allergies and to refresh your home.",
     },
     features: {
-      fr: ["Cuisine", "Salles de bain", "Chambres", "Espaces communs"],
-      en: ["Kitchen", "Bathrooms", "Bedrooms", "Common Areas"],
+      fr: ["Tapis", "Carpettes", "Meubles rembourrés", "Matelas"],
+      en: ["Carpets", "Area rugs", "Upholstered furniture", "Mattresses"],
     },
     image: "content_pic_big3.webp",
   },
@@ -172,28 +179,28 @@ export const SERVICES = [
       en: "Commercial Cleaning",
     },
     description: {
-      fr: "Services professionnels pour bureaux, commerces et espaces commerciaux de toutes tailles.",
-      en: "Professional services for offices, retail spaces and commercial properties of all sizes.",
+      fr: "Service de nettoyage pour édifices à bureaux, hôtels, cinémas, résidences pour personnes âgées et espaces industriels. Disponible 24/7 pour minimiser les interruptions.",
+      en: "Cleaning services for office buildings, hotels, cinemas, senior residences, and industrial spaces. Available 24/7 to minimize downtime.",
     },
     features: {
-      fr: ["Bureaux", "Commerces", "Immeubles", "Espaces partagés"],
-      en: ["Offices", "Retail", "Buildings", "Shared Spaces"],
+      fr: ["Bureaux", "Hôtels", "Cinémas", "Espaces industriels"],
+      en: ["Offices", "Hotels", "Cinemas", "Industrial spaces"],
     },
     image: "2-commercial.webp",
   },
   {
     id: "post-disaster",
     title: {
-      fr: "Après-Sinistre",
-      en: "Post Disaster",
+      fr: "Après sinistre",
+      en: "Post-disaster",
     },
     description: {
-      fr: "Nettoyage et restauration après sinistre. Nous vous aidons à retrouver votre espace après un incendie, une inondation ou tout autre désastre.",
-      en: "Post-disaster cleaning and restoration. We help you recover your space after fire, flood, or any other disaster.",
+      fr: "Intervention rapide 24/7 pour dégâts d'eau, inondations, incendies. Extraction d'eau, assèchement de planchers, déshumidification et élimination d'odeurs. Accepté par les assurances.",
+      en: "24/7 rapid response for water damage, flooding, and fire. Water extraction, floor drying, dehumidification, and odor removal. Insurance accepted.",
     },
     features: {
-      fr: ["Dégâts d'eau", "Après incendie", "Moisissures", "Restauration"],
-      en: ["Water damage", "Fire damage", "Mold", "Restoration"],
+      fr: ["Extraction d'eau", "Assèchement", "Déshumidification", "Élimination d'odeurs"],
+      en: ["Water extraction", "Drying", "Dehumidification", "Odor removal"],
     },
     image: null,
   },
@@ -233,46 +240,56 @@ export const SERVICES = [
 
 export const ABOUT_CONTENT = {
   title: {
-    fr: "Notre Garantie de Service",
-    en: "Our Service Guarantee",
+    fr: "Pourquoi Choisir Technivapeur?",
+    en: "Why Choose Technivapeur?",
   },
   subtitle: {
-    fr: "100% Satisfaction Garantie",
-    en: "100% Satisfaction Guaranteed",
+    fr: "Une entreprise familiale établie à Montréal depuis 1996",
+    en: "A family business established in Montreal since 1996",
   },
   intro: {
-    fr: "Nous savons que vous apprécierez la qualité premium de notre service de nettoyage, c'est pourquoi nous offrons une garantie de service à 100%!",
-    en: "We know you'll enjoy the premium quality of our cleaning service, so we offer a 100% Guarantee of Service!",
+    fr: "Depuis 1996, Technivapeur aide les familles et les entreprises à retrouver des espaces propres, sains et impeccables — avec une approche humaine, des équipements professionnels, et une vraie rigueur.",
+    en: "Since 1996, Technivapeur has helped families and businesses maintain clean, healthy, spotless spaces—with a human approach, professional equipment, and real attention to detail.",
   },
   sections: [
     {
       title: {
-        fr: "Personnalisé pour Vous",
-        en: "Customized for You",
+        fr: "30 ans d'expérience",
+        en: "30 years of experience",
       },
       content: {
-        fr: "Nous traitons tous nos clients comme des individus. Puisque chaque maison est unique, nous n'avons pas de prix fixes. Nous visitons votre maison et fournissons une estimation gratuite et sans obligation.",
-        en: "We treat all our clients as individuals. Since every home is unique, we do not have set prices. We visit your home and provide a free, no-obligation estimate.",
+        fr: "Entreprise familiale établie à Montréal depuis 1996. Jacques Beauchesne et Stéphane Géraldet, les propriétaires, travaillent personnellement sur vos projets.",
+        en: "A family business established in Montreal since 1996. Jacques Beauchesne and Stéphane Géraldet, the owners, personally work on your projects.",
       },
     },
     {
       title: {
-        fr: "Équipe Professionnelle",
-        en: "Professional Team",
+        fr: "Équipements professionnels",
+        en: "Professional equipment",
       },
       content: {
-        fr: "Nous envoyons une équipe de deux professionnels formés à votre domicile. Ils arrivent en uniforme, sont vérifiés et entièrement assurés. Notre équipe apporte tout l'équipement et les fournitures nécessaires.",
-        en: "We send a team of two trained professionals to your home. They arrive in uniform, are reference-checked and fully insured. Our team brings all necessary equipment and supplies.",
+        fr: "Technologie de nettoyage à la vapeur industrielle à la fine pointe. 3 camions entièrement équipés pour vous servir rapidement.",
+        en: "Cutting-edge industrial steam-cleaning technology. Three fully equipped trucks to serve you quickly.",
       },
     },
     {
       title: {
-        fr: "Notre Engagement",
-        en: "Our Commitment",
+        fr: "Personnel qualifié",
+        en: "Qualified team",
       },
       content: {
-        fr: "Nous nous efforçons de fournir le plus haut niveau de qualité, de service et de valeur à chaque client. Si vous n'êtes pas complètement satisfait, informez-nous immédiatement et nous re-nettoierons gratuitement.",
-        en: "We strive to provide the highest level of quality, service and value to each client. If you are not completely satisfied, inform us immediately and we will re-clean free of charge.",
+        fr: "Notre équipe reçoit des formations continues pour garantir un service de qualité supérieure et des résultats exceptionnels.",
+        en: "Our team receives ongoing training to ensure top-quality service and exceptional results.",
+      },
+    },
+    {
+      title: {
+        fr: "Satisfaction garantie",
+        en: "Satisfaction guaranteed",
+      },
+      content: {
+        fr: "Des milliers de clients satisfaits nous réfèrent à leurs proches année après année.",
+        en: "Thousands of satisfied clients recommend us year after year.",
       },
     },
   ],

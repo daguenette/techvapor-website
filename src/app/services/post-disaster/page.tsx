@@ -56,8 +56,8 @@ export default function PostDisasterCleaningPage() {
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-6 sm:mb-7 md:mb-8">
                   {language === "fr"
-                    ? "Nous vous aidons à retrouver votre espace après un sinistre. Notre équipe expérimentée intervient rapidement pour nettoyer et restaurer votre propriété."
-                    : "We help you recover your space after a disaster. Our experienced team responds quickly to clean and restore your property."}
+                    ? "Victime d'un dégât d'eau, incendie ou autre sinistre à Montréal? Technivapeur offre un service d'urgence disponible 24/7 pour le nettoyage après sinistre, l'assèchement et la restauration de votre propriété."
+                    : "Dealing with water damage, fire, or another disaster in Montreal? Technivapeur provides 24/7 emergency post-disaster cleaning, drying, and restoration services."}
                 </p>
                 <div>
                   <a href="#service-inquiry">
@@ -87,8 +87,8 @@ export default function PostDisasterCleaningPage() {
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
                 {language === "fr"
-                  ? "Après un incendie, une inondation ou tout autre sinistre, notre équipe spécialisée intervient pour nettoyer, désinfecter et restaurer votre propriété."
-                  : "After a fire, flood, or any other disaster, our specialized team intervenes to clean, disinfect, and restore your property."}
+                  ? "Un dégât d’eau ou un sinistre peut causer des dommages importants. Nous offrons l’extraction d’eau, la déshumidification, l’assèchement des planchers et l’élimination d’odeurs pour rétablir un environnement sécuritaire et sain."
+                  : "Water damage or a disaster can cause major harm. We provide water extraction, dehumidification, floor drying, and odor removal to restore a safe, healthy environment."}
               </p>
             </div>
 
@@ -188,8 +188,8 @@ export default function PostDisasterCleaningPage() {
               </p>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-7 md:mb-8">
                 {language === "fr"
-                  ? "Nous travaillons avec les compagnies d'assurance et vous accompagnons tout au long du processus. Faites confiance à notre expertise pour retrouver votre espace."
-                  : "We work with insurance companies and guide you through the entire process. Trust our expertise to help you recover your space."}
+                  ? "Nos services de nettoyage après sinistre et d’urgence 24/7 sont offerts à Montréal, sur la Rive-Nord et dans les environs, pour vous offrir une paix d’esprit lorsque vous en avez le plus besoin."
+                  : "Our 24/7 post-disaster and emergency services are offered in Montreal, the North Shore, and surrounding areas—so you get peace of mind when you need it most."}
               </p>
               <a href="#service-inquiry">
                 <Button

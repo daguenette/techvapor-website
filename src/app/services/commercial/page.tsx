@@ -43,8 +43,8 @@ export default function CommercialCleaningPage() {
               </h1>
               <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed">
                 {language === "fr"
-                  ? "Maintenez un environnement de travail professionnel et accueillant avec nos services de nettoyage commercial adaptés à vos besoins d'affaires."
-                  : "Maintain a professional and welcoming work environment with our commercial cleaning services tailored to your business needs."}
+                  ? "Vous recherchez un service professionnel de nettoyage commercial à Montréal et environs? Technivapeur offre des solutions de nettoyage haute performance disponibles 24/7 pour tous vos besoins commerciaux et industriels."
+                  : "Looking for professional commercial cleaning in Montreal and surrounding areas? Technivapeur offers high-performance cleaning solutions available 24/7 for commercial and industrial needs."}
               </p>
               <div className="mt-8">
                 <a href="#service-inquiry">
@@ -76,8 +76,8 @@ export default function CommercialCleaningPage() {
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               {language === "fr"
-                ? "Créez un environnement de travail productif avec notre service de nettoyage commercial. Nous maintenons votre espace professionnel impeccable avec des horaires flexibles qui minimisent l'interruption de vos opérations."
-                : "Create a productive work environment with our commercial cleaning service. We maintain your professional space spotless with flexible scheduling that minimizes disruption to your operations."}
+                ? "Service de nettoyage pour édifices à bureaux, hôtels, cinémas, résidences pour personnes âgées et espaces industriels. Disponible 24/7 pour minimiser les interruptions."
+                : "Cleaning services for office buildings, hotels, cinemas, senior residences, and industrial spaces. Available 24/7 to minimize downtime."}
             </p>
           </div>
 
@@ -156,13 +156,13 @@ export default function CommercialCleaningPage() {
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed mb-6">
               {language === "fr"
-                ? "Nous comprenons que votre entreprise fonctionne selon un horaire unique. C'est pourquoi nous offrons des services de nettoyage en soirée et en fin de semaine pour minimiser l'interruption de vos activités quotidiennes."
-                : "We understand your business operates on a unique schedule. That's why we offer evening and weekend cleaning services to minimize disruption to your daily operations."}
+                ? "Que ce soit pour un dégât d'eau, incendie, nettoyage après crime ou simple entretien préventif, notre expertise en nettoyage commercial professionnel permet de remettre en état presque n'importe quel environnement."
+                : "Whether it's water damage, fire, post-incident cleanup, or preventative maintenance, our commercial cleaning expertise can restore almost any environment."}
             </p>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
               {language === "fr"
-                ? "Notre équipe professionnelle arrive en uniforme, entièrement assurée et équipée de tout le nécessaire. Nous créons un plan de nettoyage personnalisé qui correspond parfaitement à vos besoins et à votre budget."
-                : "Our professional team arrives in uniform, fully insured and equipped with everything needed. We create a customized cleaning plan that perfectly fits your needs and budget."}
+                ? "Disponibles 24 heures sur 24, 7 jours sur 7, nous intervenons rapidement afin de minimiser l’impact sur vos opérations et offrir à vos employés et clients un environnement sain et impeccable."
+                : "Available 24/7, we respond quickly to minimize impact on your operations and provide employees and customers with a clean, healthy environment."}
             </p>
             <a href="#service-inquiry">
               <Button

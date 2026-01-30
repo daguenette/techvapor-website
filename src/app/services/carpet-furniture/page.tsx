@@ -63,8 +63,8 @@ export default function CarpetFurnitureCleaningPage() {
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-6 sm:mb-7 md:mb-8">
                   {language === "fr"
-                    ? "Redonnez vie à vos tapis et meubles avec notre service de nettoyage professionnel à la vapeur. Nous éliminons les taches, les odeurs et les allergènes en profondeur."
-                    : "Bring your carpets and furniture back to life with our professional steam cleaning service. We eliminate stains, odors, and allergens deep within the fabric."}
+                    ? "Service professionnel de nettoyage à la vapeur. Redonnez vie à vos tapis et meubles: élimination des taches, odeurs, allergènes et saletés incrustées. Service à Montréal et Rive-Nord depuis 1996."
+                    : "Professional steam cleaning to bring carpets and furniture back to life: removes stains, odors, allergens, and embedded dirt. Serving Montreal and the North Shore since 1996."}
                 </p>
                 <div>
                   <a href="#service-inquiry">
@@ -94,8 +94,8 @@ export default function CarpetFurnitureCleaningPage() {
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
                 {language === "fr"
-                  ? "Notre service de nettoyage à la vapeur utilise une technologie de pointe pour nettoyer en profondeur vos tapis, canapés, fauteuils et autres meubles rembourrés."
-                  : "Our steam cleaning service uses cutting-edge technology to deep clean your carpets, sofas, armchairs, and other upholstered furniture."}
+                  ? "Nettoyage de tapis: laine, orientaux, synthétiques, moquette mur à mur et carpettes. Nettoyage de meubles rembourrés: sofas, fauteuils, chaises (microfibre, velours, lin, cuir). Nettoyage de matelas: élimine acariens, allergènes, taches et odeurs."
+                  : "Carpet cleaning for wool, oriental, synthetic, wall-to-wall carpet and area rugs. Upholstery cleaning for sofas, chairs and dining seats (microfiber, velvet, linen, leather). Mattress cleaning helps remove dust mites, allergens, stains and odors."}
               </p>
             </div>
 

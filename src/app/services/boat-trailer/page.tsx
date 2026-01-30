@@ -57,8 +57,8 @@ export default function BoatTrailerCleaningPage() {
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-6 sm:mb-7 md:mb-8">
                   {language === "fr"
-                    ? "Redonnez de l'éclat à votre bateau ou roulotte avec notre service de nettoyage professionnel. Intérieur et extérieur impeccables."
-                    : "Restore the shine to your boat or trailer with our professional cleaning service. Impeccable interior and exterior."}
+                    ? "Préparez votre bateau ou roulotte pour la saison avec notre service de nettoyage à la vapeur professionnel. Technivapeur nettoie en profondeur l'intérieur et l'extérieur de vos véhicules récréatifs à Montréal et sur la Rive-Nord."
+                    : "Get your boat or RV ready for the season with our professional steam cleaning service. Technivapeur deep cleans the interior and exterior of recreational vehicles in Montreal and the North Shore."}
                 </p>
                 <div>
                   <a href="#service-inquiry">
@@ -88,8 +88,8 @@ export default function BoatTrailerCleaningPage() {
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
                 {language === "fr"
-                  ? "Notre équipe spécialisée nettoie en profondeur votre bateau, roulotte ou véhicule récréatif. De l'intérieur à l'extérieur, nous prenons soin de chaque détail."
-                  : "Our specialized team deep cleans your boat, trailer, or recreational vehicle. From interior to exterior, we take care of every detail."}
+                  ? "Service mobile — nous venons à vous. Notre équipement mobile nous permet de nettoyer votre bateau ou roulotte directement à votre domicile, à la marina, au terrain d'entreposage ou au camping. Pas besoin de déplacer votre véhicule!"
+                  : "Mobile service — we come to you. Our mobile equipment lets us clean your boat or RV at your home, marina, storage yard, or campground. No need to move your vehicle."}
               </p>
             </div>
 

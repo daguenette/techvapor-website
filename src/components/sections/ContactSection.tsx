@@ -228,7 +228,7 @@ export function ContactSection() {
                 {language === "fr" ? "Notre zone" : "Service Area"}
               </h3>
               <p className="text-base sm:text-sm md:text-base font-semibold text-gray-900 mb-1 min-h-[44px] flex items-center justify-center">
-                {SITE_CONFIG.location}
+                {language === "fr" ? SITE_CONFIG.location.fr : SITE_CONFIG.location.en}
               </p>
               <p className="text-xs text-gray-500">
                 {language === "fr" ? "Estimation gratuite" : "Free estimate"}

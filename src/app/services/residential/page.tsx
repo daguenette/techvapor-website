@@ -64,8 +64,8 @@ export default function ResidentialCleaningPage() {
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-6 sm:mb-7 md:mb-8">
                   {language === "fr"
-                    ? "Après une longue journée de travail, vous méritez de rentrer dans un espace frais et impeccable. Profitez de notre service de nettoyage professionnel hebdomadaire, bihebdomadaire ou mensuel."
-                    : "After a long day at work, you deserve to come home to a fresh, spotless space. Enjoy our professional weekly, bi-weekly, or monthly cleaning service."}
+                    ? "Vous cherchez un service professionnel de nettoyage de tapis résidentiel à Montréal? Technivapeur offre un nettoyage en profondeur de vos tapis avec plus de 30 ans d'expérience et des équipements industriels à la fine pointe de la technologie."
+                    : "Looking for professional residential carpet cleaning in Montreal? Technivapeur provides deep carpet cleaning with 30+ years of experience and state-of-the-art industrial equipment."}
                 </p>
                 <div>
                   <a href="#service-inquiry">
@@ -95,8 +95,8 @@ export default function ResidentialCleaningPage() {
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
                 {language === "fr"
-                  ? "Profitez d'une maison impeccable avec notre service de nettoyage résidentiel. Notre équipe d'experts s'assure que votre espace reste frais avec des tâches essentielles personnalisées selon vos besoins uniques."
-                  : "Enjoy a spotless home with our residential cleaning service. Our expert team ensures your space stays fresh with essential tasks customized to your unique needs."}
+                  ? "Notre service de nettoyage de tapis à domicile élimine efficacement les taches, la saleté incrustée, les allergènes, les acariens et les odeurs, tout en respectant les fibres de vos tapis, divans et fauteuils."
+                  : "Our in-home carpet cleaning service removes stains, embedded dirt, allergens, dust mites, and odors—while respecting the fibers of your carpets, sofas, and chairs."}
               </p>
             </div>
 
@@ -191,13 +191,13 @@ export default function ResidentialCleaningPage() {
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-4 sm:mb-5 md:mb-6">
                 {language === "fr"
-                  ? "Après une journée bien remplie au travail ou à prendre soin de votre famille, la dernière chose dont vous voulez vous soucier est de nettoyer votre maison. Laissez Technivapeur s'occuper du travail pour vous!"
-                  : "After a busy day at work or taking care of your family, the last thing you want to worry about is cleaning your home. Let Technivapeur take care of the dirty work for you!"}
+                  ? "Méthode de nettoyage à la vapeur professionnelle: nettoyage à la vapeur haute température, extraction à haute pression, aspiration puissante pour un séchage rapide, et produits écologiques et sécuritaires."
+                  : "Professional steam-cleaning method: high-temperature steam cleaning, high-pressure extraction, powerful vacuum for fast drying, and eco-friendly, safe products."}
               </p>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-7 md:mb-8">
                 {language === "fr"
-                  ? "Que vous préfériez un nettoyage hebdomadaire, bihebdomadaire ou mensuel, nous avons ce qu'il vous faut. Imaginez entrer dans votre salle de bain étincelante ou votre cuisine bien rangée sans avoir à lever le petit doigt."
-                  : "Whether you prefer weekly, bi-weekly or monthly cleaning service, we have you covered. Imagine walking into your sparkling clean bathroom or your tidy and shining kitchen without you having to lift a finger."}
+                  ? "Résultats garantis: tapis propres en profondeur sans résidus, séchage rapide (sans humidité excessive), sans odeurs désagréables, sans taches visibles, et un vrai effet \"comme neufs\". Desservant Montréal, Laval et la Rive-Nord."
+                  : "Guaranteed results: deep-cleaned carpets with no residue, fast drying (no excessive moisture), no unpleasant odors, no visible stains, and a true \"like-new\" refresh. Serving Montreal, Laval, and the North Shore."}
               </p>
               <a href="#service-inquiry">
                 <Button

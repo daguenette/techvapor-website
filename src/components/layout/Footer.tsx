@@ -6,7 +6,7 @@ import {
   SERVICES,
 } from "@/lib/constants/site-content";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
-import { Phone, Mail, MapPin, Sparkles } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {
@@ -19,10 +19,7 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-9 md:gap-10 mb-10 sm:mb-11 md:mb-12">
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-3 mb-5 sm:mb-6">
-              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
-                <Sparkles className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-              </div>
+            <div className="mb-5 sm:mb-6">
               <span className="text-xl sm:text-2xl font-bold">
                 {SITE_CONFIG.name}
               </span>
@@ -101,7 +98,9 @@ export function Footer() {
                 <div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-2">
                   <MapPin className="h-4 w-4" />
                 </div>
-                <span className="text-sm pt-2">{SITE_CONFIG.location}</span>
+                <span className="text-sm pt-2">
+                  {language === "fr" ? SITE_CONFIG.location.fr : SITE_CONFIG.location.en}
+                </span>
               </div>
             </div>
           </div>
