@@ -11,10 +11,17 @@ export function AboutSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-20 lg:py-28 bg-white">
-      <div className="container mx-auto max-w-7xl px-4">
+    <section
+      id="about"
+      className="relative py-20 lg:py-28 bg-white overflow-hidden"
+    >
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[url('/Truck_06.webp')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-white/60" />
+      </div>
+      <div className="relative container mx-auto max-w-7xl px-4">
         {/* Header with Guarantee Badge */}
-        <div className="text-center mb-16">
+        <div className="relative text-center mb-16">
           <div className="inline-block mb-6">
             <div className="bg-red-600 text-white px-8 py-3 rounded-full font-bold text-lg shadow-lg">
               {t(ABOUT_CONTENT.subtitle)}
@@ -29,11 +36,11 @@ export function AboutSection() {
         </div>
 
         {/* Content Sections */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="relative grid md:grid-cols-3 gap-8 mb-12">
           {ABOUT_CONTENT.sections.map((section, index) => {
             const Icon = iconMap[index];
             return (
-              <Card 
+              <Card
                 key={index}
                 className="border-2 border-gray-100 hover:border-blue-200 transition-all duration-300 bg-white shadow-lg"
               >

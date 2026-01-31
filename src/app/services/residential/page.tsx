@@ -1,42 +1,48 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SERVICES } from "@/lib/constants/site-content";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
-import { Sparkles, Wind, Sofa, DoorOpen, Send } from "lucide-react";
+import { Waves, Wind, Sofa, ShieldCheck, Fan } from "lucide-react";
 import { ImageCarousel } from "@/components/ui/ImageCarousel";
+import { QuoteRequestForm } from "@/components/forms/QuoteRequestForm";
 
 export default function ResidentialCleaningPage() {
   const { t, language } = useLanguage();
   const service = SERVICES.find((s) => s.id === "residential");
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    // Form submission logic here
-    console.log("Form submitted:", formData);
-  };
 
   const carouselImages = [
-    { src: "/Residential_01.jpg", alt: language === "fr" ? "Nettoyage résidentiel" : "Residential cleaning" },
-    { src: "/Residential_02.webp", alt: language === "fr" ? "Nettoyage de maison" : "Home cleaning" },
-    { src: "/Residential_03.webp", alt: language === "fr" ? "Nettoyage de tapis" : "Carpet cleaning" },
-    { src: "/Residential_04.webp", alt: language === "fr" ? "Nettoyage professionnel" : "Professional cleaning" },
-    { src: "/Residential_05.webp", alt: language === "fr" ? "Service résidentiel" : "Residential service" },
-    { src: "/Residential_06.webp", alt: language === "fr" ? "Entretien ménager" : "House maintenance" },
-    { src: "/Residential_07.webp", alt: language === "fr" ? "Nettoyage à domicile" : "Home cleaning service" },
-    { src: "/Residential_08.webp", alt: language === "fr" ? "Services de nettoyage" : "Cleaning services" },
+    {
+      src: "/Residential_04.webp",
+      alt:
+        language === "fr" ? "Nettoyage professionnel" : "Professional cleaning",
+    },
+    {
+      src: "/Residential_03.webp",
+      alt: language === "fr" ? "Nettoyage de tapis" : "Carpet cleaning",
+    },
+    {
+      src: "/Residential_02.webp",
+      alt: language === "fr" ? "Nettoyage de maison" : "Home cleaning",
+    },
+    {
+      src: "/Residential_05.webp",
+      alt: language === "fr" ? "Service résidentiel" : "Residential service",
+    },
+    {
+      src: "/Residential_06.webp",
+      alt: language === "fr" ? "Entretien ménager" : "House maintenance",
+    },
+    {
+      src: "/Residential_07.webp",
+      alt: language === "fr" ? "Nettoyage à domicile" : "Home cleaning service",
+    },
+    {
+      src: "/Residential_08.webp",
+      alt: language === "fr" ? "Services de nettoyage" : "Cleaning services",
+    },
   ];
 
   if (!service) return null;
@@ -63,9 +69,32 @@ export default function ResidentialCleaningPage() {
                   {t(service.title)}
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-6 sm:mb-7 md:mb-8">
-                  {language === "fr"
-                    ? "Vous cherchez un service professionnel de nettoyage de tapis résidentiel à Montréal? Technivapeur offre un nettoyage en profondeur de vos tapis avec plus de 30 ans d'expérience et des équipements industriels à la fine pointe de la technologie."
-                    : "Looking for professional residential carpet cleaning in Montreal? Technivapeur provides deep carpet cleaning with 30+ years of experience and state-of-the-art industrial equipment."}
+                  {language === "fr" ? (
+                    <>
+                      <span>
+                        Vous cherchez un service professionnel de nettoyage de
+                        tapis résidentiel à Montréal?
+                      </span>
+                      <span className="block mt-2">
+                        Technivapeur offre un nettoyage en profondeur de vos
+                        tapis avec plus de 30 ans d'expérience et des
+                        équipements industriels à la fine pointe de la
+                        technologie.
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <span>
+                        Looking for professional residential carpet cleaning in
+                        Montreal?
+                      </span>
+                      <span className="block mt-2">
+                        Technivapeur provides deep carpet cleaning with 30+
+                        years of experience and state-of-the-art industrial
+                        equipment.
+                      </span>
+                    </>
+                  )}
                 </p>
                 <div>
                   <a href="#service-inquiry">
@@ -104,15 +133,15 @@ export default function ResidentialCleaningPage() {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-7 md:gap-8 mb-12">
               <div className="text-center">
                 <div className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 mx-auto mb-4 sm:mb-5 md:mb-6 rounded-full bg-black flex items-center justify-center">
-                  <Sparkles
+                  <Waves
                     className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-white"
                     strokeWidth={2}
                   />
                 </div>
                 <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
                   {language === "fr"
-                    ? "Nettoyage en profondeur des salles de bain et cuisines"
-                    : "Thorough cleaning of your bathroom and kitchen"}
+                    ? "Traitement vapeur des tapis mur à mur"
+                    : "Wall-to-wall carpet steam treatment"}
                 </p>
               </div>
 
@@ -125,8 +154,8 @@ export default function ResidentialCleaningPage() {
                 </div>
                 <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
                   {language === "fr"
-                    ? "Aspiration complète de chaque pièce"
-                    : "Complete vacuuming of every room"}
+                    ? "Extraction des allergènes et acariens"
+                    : "Allergen and dust-mite extraction"}
                 </p>
               </div>
 
@@ -139,36 +168,36 @@ export default function ResidentialCleaningPage() {
                 </div>
                 <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
                   {language === "fr"
-                    ? "Lavage de tous les planchers"
-                    : "Washing all non-carpeted floors"}
+                    ? "Nettoyage des divans et fauteuils en tissu"
+                    : "Sofa and armchair upholstery cleaning"}
                 </p>
               </div>
 
               <div className="text-center">
                 <div className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 mx-auto mb-4 sm:mb-5 md:mb-6 rounded-full bg-black flex items-center justify-center">
-                  <Sparkles
+                  <ShieldCheck
                     className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-white"
                     strokeWidth={2}
                   />
                 </div>
                 <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
                   {language === "fr"
-                    ? "Dépoussiérage des surfaces et luminaires"
-                    : "Dusting surfaces and fixtures"}
+                    ? "Traitement anti-taches et anti-odeurs"
+                    : "Anti-stain and deodorizing treatment"}
                 </p>
               </div>
 
               <div className="text-center col-span-2 sm:col-span-1">
                 <div className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 mx-auto mb-4 sm:mb-5 md:mb-6 rounded-full bg-black flex items-center justify-center">
-                  <DoorOpen
+                  <Fan
                     className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-white"
                     strokeWidth={2}
                   />
                 </div>
                 <p className="text-sm sm:text-base text-gray-700 font-medium px-2">
                   {language === "fr"
-                    ? "Nettoyage des vitres intérieures (sur demande)"
-                    : "Interior window cleaning (upon request)"}
+                    ? "Séchage rapide pour un retour à la vie normale"
+                    : "Fast drying for quick home use"}
                 </p>
               </div>
             </div>
@@ -196,8 +225,8 @@ export default function ResidentialCleaningPage() {
               </p>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-7 md:mb-8">
                 {language === "fr"
-                  ? "Résultats garantis: tapis propres en profondeur sans résidus, séchage rapide (sans humidité excessive), sans odeurs désagréables, sans taches visibles, et un vrai effet \"comme neufs\". Desservant Montréal, Laval et la Rive-Nord."
-                  : "Guaranteed results: deep-cleaned carpets with no residue, fast drying (no excessive moisture), no unpleasant odors, no visible stains, and a true \"like-new\" refresh. Serving Montreal, Laval, and the North Shore."}
+                  ? 'Résultats garantis: tapis propres en profondeur sans résidus, séchage rapide (sans humidité excessive), sans odeurs désagréables, sans taches visibles, et un vrai effet "comme neufs". Desservant Montréal, Laval et la Rive-Nord.'
+                  : 'Guaranteed results: deep-cleaned carpets with no residue, fast drying (no excessive moisture), no unpleasant odors, no visible stains, and a true "like-new" refresh. Serving Montreal, Laval, and the North Shore.'}
               </p>
               <a href="#service-inquiry">
                 <Button
@@ -216,7 +245,7 @@ export default function ResidentialCleaningPage() {
         {/* Contact Form Section */}
         <section
           id="service-inquiry"
-          className="py-12 sm:py-16 md:py-20 lg:py-28 bg-gray-50"
+          className="py-10 sm:py-14 md:py-16 lg:py-20 bg-gray-50"
         >
           <div className="container mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-10 md:mb-12">
@@ -227,102 +256,7 @@ export default function ResidentialCleaningPage() {
               </h2>
             </div>
 
-            <Card className="border-2 border-gray-200 shadow-xl">
-              <CardContent className="p-5 sm:p-6 md:p-8">
-                <form
-                  onSubmit={handleSubmit}
-                  className="space-y-5 sm:space-y-6"
-                >
-                  <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        {language === "fr" ? "Prénom" : "First Name"}*
-                      </label>
-                      <Input
-                        type="text"
-                        placeholder={
-                          language === "fr" ? "Votre prénom" : "Your first name"
-                        }
-                        value={formData.name}
-                        onChange={(e) =>
-                          setFormData({ ...formData, name: e.target.value })
-                        }
-                        required
-                        className="h-12 sm:h-13 text-base border-gray-300 focus:border-red-500 focus:ring-red-500"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        {language === "fr" ? "Téléphone" : "Phone Number"}*
-                      </label>
-                      <Input
-                        type="tel"
-                        placeholder={
-                          language === "fr"
-                            ? "Votre numéro"
-                            : "Your phone number"
-                        }
-                        value={formData.phone}
-                        onChange={(e) =>
-                          setFormData({ ...formData, phone: e.target.value })
-                        }
-                        required
-                        className="h-12 sm:h-13 text-base border-gray-300 focus:border-red-500 focus:ring-red-500"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      {language === "fr" ? "Adresse courriel" : "Email"}*
-                    </label>
-                    <Input
-                      type="email"
-                      placeholder={
-                        language === "fr" ? "votre@email.com" : "your@email.com"
-                      }
-                      value={formData.email}
-                      onChange={(e) =>
-                        setFormData({ ...formData, email: e.target.value })
-                      }
-                      required
-                      className="h-12 sm:h-13 text-base border-gray-300 focus:border-red-500 focus:ring-red-500"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      {language === "fr" ? "Message" : "Message"}
-                    </label>
-                    <Textarea
-                      placeholder={
-                        language === "fr"
-                          ? "Décrivez vos besoins de nettoyage..."
-                          : "Describe your cleaning needs..."
-                      }
-                      rows={5}
-                      value={formData.message}
-                      onChange={(e) =>
-                        setFormData({ ...formData, message: e.target.value })
-                      }
-                      className="text-base border-gray-300 focus:border-red-500 focus:ring-red-500 resize-none min-h-[120px]"
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-semibold h-12 sm:h-13 text-base sm:text-lg min-h-[48px]"
-                  >
-                    <Send className="mr-2 h-5 w-5" />
-                    {language === "fr"
-                      ? "Envoyer la demande"
-                      : "Submit Inquiry"}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+            <QuoteRequestForm />
           </div>
         </section>
       </div>

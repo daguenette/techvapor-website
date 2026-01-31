@@ -7,6 +7,8 @@ interface ImageCarouselProps {
   images: {
     src: string;
     alt: string;
+    focus?: string;
+    zoom?: number;
   }[];
   autoPlayInterval?: number;
   className?: string;
@@ -14,20 +16,20 @@ interface ImageCarouselProps {
 
 export function ImageCarousel({
   images,
-  autoPlayInterval = 5000,
+  autoPlayInterval = 0,
   className = "",
 }: ImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToNext = useCallback(() => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1,
     );
   }, [images.length]);
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1,
     );
   };
 
@@ -61,6 +63,11 @@ export function ImageCarousel({
                 src={image.src}
                 alt={image.alt}
                 className="w-full h-full object-cover"
+                style={{
+                  objectPosition: image.focus,
+                  transform: image.zoom ? `scale(${image.zoom})` : undefined,
+                  transition: "transform 0.5s ease",
+                }}
               />
             ) : (
               <div className="w-full h-full bg-gray-300 flex items-center justify-center">
